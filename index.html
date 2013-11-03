@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Index of altbdoor www</title>
+		
+		<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAP0lEQVQ4y2NgGAzgP4WY4T+5AKsB+AzEppb6BpDtBVIDD5cB2PgE1WBIIkcRDjG8BhCVdqgfBhTFAqVJeWABAPENlnjv/BdsAAAAAElFTkSuQmCC" type="image/x-icon">
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
+		<link rel="stylesheet" href="common.css">
+		
+		<style>
+			#linkList {margin:0; padding:0; list-style:none}
+			#linkList > li {float:left; margin:10px 10px 0 0}
+			#linkList > li > a {width:180px; height:60px; padding:0.5em}
+			.linkIcon {position:absolute; color:#fff; margin:40px 0 0 160px}
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="box">
+				<h2>Index</h2>
+				<small>List of projects / works made by altbdoor</small>
+			</div>
+			<br>
+			
+			<ul id="linkList" class="clearfix">
+				<li>
+					<a target="_blank" href="https://drive.google.com/folderview?id=0B5pMzfAiZLn4cU1BYjFKdWlXdVU&usp=sharing">
+						<i class="linkIcon icon-book"></i> Edu Repo
+					</a>
+				</li>
+				
+				<script>
+					var links = [
+						'GibFish Pay Calculator',
+						'UTAR Pass Mark Calculator',
+						'CSS Ripped Buttons',
+						'Facebook Profile Preview',
+						'Java Class Kickstart'
+					];
+					
+					links.sort();
+					
+					for (i=0; i<links.length; i++) {
+						var tempArr = links[i].split(' ');
+						tempArr[0] = tempArr[0].toLowerCase();
+						
+						var li = document.createElement('li');
+						var icon = document.createElement('i');
+						var a = document.createElement('a');
+						
+						icon.className = 'linkIcon icon-globe';
+						
+						a.href = tempArr.join('') + '.html';
+						a.appendChild(icon);
+						a.appendChild(document.createTextNode(links[i]));
+						
+						li.appendChild(a);
+						
+						document.getElementById('linkList').appendChild(li);
+					}
+				</script>
+			</ul>
+			
+			<small class="box">
+				Written by <a target="_blank" href="https://sites.google.com/site/altbdoor/">altbdoor</a>.<br>
+				Credits to 
+				<a target="_blank" href="http://jquery.com/">JQuery</a>, 
+				<a target="_blank" href="http://www.bootstrapcdn.com//">Bootstrap CDN</a>, 
+				<a target="_blank" href="https://developers.google.com/speed/libraries/devguide">Google CDN</a>,
+				<a target="_blank" href="http://code.google.com/p/google-code-prettify/">Google Code Prettify</a>, 
+				<a target="_blank" href="https://drive.google.com/">Google Drive</a> and 
+				<a target="_blank" href="http://www.google.com/webfonts">Google Web Font</a>.<br>
+				<i class="icon-smile"></i> 2013 Unless stated otherwise, all files have No CopyRights, No License, 
+				in support of <a target="_blank" href="http://www.kopimi.com/kopimi/">KOPIMI</a>.
+			</small>
+			
+		</div>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+	</body>
+</html>
