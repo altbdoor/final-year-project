@@ -1,0 +1,50 @@
+/* Custom styles
+==================================================*/
+
+/* button
+==================================================*/
+.btn {
+	border:0; text-decoration:none; color:#fff; cursor:pointer; display:inline-block;
+	background-color:#EEE8D5;
+	padding:5px 10px
+}
+
+.btn:hover {
+	
+}
+
+.btn.btn-yellow {
+	background-color:#B58900
+}
+
+.btn.btn-orange {
+	background-color:#CB4B16
+}
+
+.btn.btn-red {
+	background-color:#DC322F
+}
+
+.btn.btn-magenta {
+	background-color:#D33682
+}
+
+.btn.btn-violet {
+	background-color:#6C71C4
+}
+
+.btn.btn-blue {
+	background-color:#268BD2
+}
+
+.btn.btn-cyan {
+	background-color:#2AA198
+}
+
+.btn.btn-green {
+	background-color:#859900
+}
+
+.btn.btn-black {
+	background-color:#002B36
+}

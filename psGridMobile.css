@@ -1,0 +1,32 @@
+/*
+ *	pixely speaking Fluid CSS
+ *	
+ *	Row clears from
+ *	Nicolas Gallagher     @ http://nicolasgallagher.com/micro-clearfix-hack/
+ *
+ *	Lowest edge: IE8, FF3, Chrome 2, Safari 4, Opera 9.5
+ *	Mobile edge: IE10, FF24, Chrome 29, Safari 3.2, Opera Mini 7, Opera Mobile 10, BB7, Android 2.1
+ *
+ */
+
+/* full fluid
+==================================================*/
+body {width:100%}
+
+.row {width:100%; margin-left:auto; margin-right:auto}
+.row:before, .row:after {content:" ";display:table}
+.row:after {clear:both}
+
+.col1-1, .col1-2, .col1-3, 
+.col1-4, .col1-8, .col2-3 {
+	display:inline; float:left; position:relative;
+}
+
+           .col100 {width: 100.00%}
+.col66:first-child {width:  66.67%}
+            .col66 {width:  66.66%}
+			.col75 {width:  75.00%}
+            .col50 {width:  50.00%}
+.col33:first-child {width:  33.34%}
+            .col33 {width:  33.33%}
+            .col25 {width:  25.00%}
