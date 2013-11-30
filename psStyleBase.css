@@ -7,6 +7,17 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 /* helper
 ==================================================*/
+.text-16 {font-size:100%}
+.text-14 {font-size:87.5%}
+
+.retro .input, .retro .btn, .retro .nav {
+	background-image:none;
+	
+	-webkit-border-radius:0; 
+	-moz-border-radius:0; 
+	border-radius:0;
+}
+
 .text-white {color:#fff; text-shadow:0 0 1px rgba(255,255,255,0.3)}
 .text-black {color:#000; text-shadow:0 0 1px rgba(0,0,0,0.3)}
 
@@ -14,14 +25,20 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 .text-center {text-align:center}
 .text-right {text-align:right}
 
-.clear:before, .clear:after{content:" ";display:table}
-.clear:after{clear:both}
+.float-left {float:left}
+.float-right {float:right}
+
+.list:before, .list:after, .clear:before, .clear:after {content:" ";display:table}
+.list:after, .clear:after {clear:both}
+
+.list {list-style:none; margin:0; padding:0}
+.list.list-float > li {float:left}
+.list.list-inline > li {display:inline-block}
 
 /* input 
 ==================================================*/
 .input {
-	border:1px solid rgba(0,0,0,0.3); padding:5px;
-	color:#000;
+	border:1px solid rgba(0,0,0,0.3); padding:5px; color:#000;
 	
 	text-shadow:0 0 1px rgba(0,0,0,0.3);
 	
@@ -36,7 +53,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
-.input.input-large {padding:10px; font-size:22px}
+.input.input-large {padding:10px; font-size:1.5em}
 .input.input-block {display:block; width:100%}
 
 /* button
@@ -65,31 +82,80 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 .btn:hover {background-color:#d7d7d7; border-color:rgba(0,0,0,0.5)}
 
-
 .btn.btn-red, .btn.btn-yellow, .btn.btn-green, .btn.btn-blue, .btn.btn-purple, .btn.btn-black {
 	color:#fff;
 	text-shadow:0 0 1px rgba(255,255,255,0.3), 1px 1px 1px rgba(0,0,0,0.3)
 }
 
 .btn.btn-red {background-color:#d32}
-.btn.btn-red:hover {background-color:#d12}
+.btn.btn-red:hover {background-color:#c12}
 
 .btn.btn-yellow {background-color:#fa1}
-.btn.btn-yellow:hover {background-color:#f90}
+.btn.btn-yellow:hover {background-color:#f80}
 
 .btn.btn-green {background-color:#094}
-.btn.btn-green:hover {background-color:#083}
+.btn.btn-green:hover {background-color:#073}
 
 .btn.btn-blue {background-color:#06c}
 .btn.btn-blue:hover {background-color:#04c}
 
 .btn.btn-purple {background-color:#a08}
-.btn.btn-purple:hover {background-color:#907}
+.btn.btn-purple:hover {background-color:#807}
 
-.btn.btn-black {background-color:#222}
-.btn.btn-black:hover {background-color:#111}
+.btn.btn-black {background-color:#444}
+.btn.btn-black:hover {background-color:#222}
 
-.btn.btn-small {padding:2px 4px; font-size:12px}
-.btn.btn-large {padding:10px 20px; font-size:22px}
+.btn.btn-small {padding:2px 4px; font-size:0.857em}
+.btn.btn-large {padding:10px 20px; font-size:1.5em}
 .btn.btn-block {padding-left:0; padding-right:0; display:block; width:100%}
+
+/* nav
+==================================================*/
+.nav {
+	padding-left:1em; padding-right:1em; min-height:3em;
+	
+	background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));
+	background-image:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+	background-image:-moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+	background-image:-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
+	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+}
+.nav:before, .nav:after {content:" ";display:table}
+.nav:after {clear:both}
+
+.nav a {
+	text-decoration:none;
+	
+	-webkit-transition:color 0.5s ease;
+	-moz-transition:color 0.5s ease;
+	-o-transition:color 0.5s ease;
+	transition:color 0.5s ease;
+}
+.nav .title {font-size:1.5em; line-height:2; margin:0 1em}
+.nav .list a {display:block; margin:0 1em; line-height:3}
+
+.nav-black {
+	background-color:#333; color:#fff; border-bottom:1px solid #222;
+	text-shadow:0 0 1px rgba(255,255,255,0.3);
+}
+
+.nav-white {
+	background-color:#eee; color:#000; border-bottom:1px solid #ddd;
+	text-shadow:0 0 1px rgba(0,0,0,0.3);
+}
+
+.nav-black a {color:#ccc; text-shadow:rgba(204,204,204,0.3)}
+.nav-white a {color:#444; text-shadow:rgba(68,68,68,0.3)}
+
+.nav-black .active {background-color:rgba(255,255,255,0.1)}
+.nav-black .active a, .nav-black a:hover {color:#fff; text-shadow:0 0 1px rgba(255,255,255,0.3)}
+.nav-white .active {background-color:rgba(0,0,0,0.1)}
+.nav-white .active a, .nav-white a:hover {color:#000; text-shadow:0 0 1px rgba(0,0,0,0.3)}
+
+.nav form {margin:0.5em 1em 0 1em}
+
+
+
+
+
 

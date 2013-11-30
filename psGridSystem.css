@@ -4,7 +4,7 @@
 
 /* desktop default ( 960 - 1199 )
 ==================================================*/
-body {width:960px; min-width:960px; margin-left:auto; margin-right:auto}
+body {min-width:960px; margin-left:auto; margin-right:auto}
 
 .row {width:940px; min-width:940px; padding-left:10px; padding-right:10px; margin-left:auto; margin-right:auto}
 .row:before, .row:after {content:" ";display:table}
@@ -39,7 +39,7 @@ body {width:960px; min-width:960px; margin-left:auto; margin-right:auto}
 /* large desktop ( 1200 and above )
 ==================================================*/
 @media (min-width: 1200px) {
-	body {width:1200px; min-width:1200px}
+	body {min-width:1200px}
 	.row {width:1180px; min-width:1180px}
 
 	 .col1 {width:  80px}
@@ -59,7 +59,7 @@ body {width:960px; min-width:960px; margin-left:auto; margin-right:auto}
 /* small desktop or tablet ( 959 and below )
 ==================================================*/
 @media (max-width: 959px) {
-	body {width:768px; min-width:768px}
+	body {min-width:768px}
 	.row {width:748px; min-width:748px}
 	
 	 .col1 {width:  44px}

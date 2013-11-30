@@ -2,86 +2,100 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+	
+		<title>Test Ground</title>
 		
-		<title>Index of altbdoor www</title>
-		
-		<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAP0lEQVQ4y2NgGAzgP4WY4T+5AKsB+AzEppb6BpDtBVIDD5cB2PgE1WBIIkcRDjG8BhCVdqgfBhTFAqVJeWABAPENlnjv/BdsAAAAAElFTkSuQmCC" type="image/x-icon">
-		
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css">
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700">
-		<link rel="stylesheet" href="common.css">
+		<link rel="stylesheet" href="psStyleBase.css">
+		<link rel="stylesheet" href="psStyleSystem.css">
+		<link rel="stylesheet" href="psGridSystem.css">
 		
 		<style>
-			#linkList {margin:0; padding:0; list-style:none}
-			#linkList > li {float:left; margin:10px 10px 0 0}
-			#linkList > li > a {width:180px; height:60px; padding:0.5em}
-			.linkIcon {position:absolute; color:#fff; margin:40px 0 0 160px}
+			/*.row {background-color:blue; }
+			.col5 {background-color:red}
+			.col2 {background-color:green; height:200px}
+			.col3 {background-color:black; height:300px}
+			.col1 {background-color:silver; height:50px}
+			.col6 {background-color:gold}
+			.col1-3 {background-color:red; box-shadow:0 0 10px #000 inset; height:50px}
+			.col2-3 {background-color:blue; box-shadow:0 0 5px #0f0 inset; height:20px}
+			*/
 		</style>
 	</head>
 	
-	<body>
-		<div id="container">
-			<div class="box">
-				<h2>Index</h2>
-				<small>List of projects / works made by altbdoor</small>
+	<body class="text-black text-14">
+		<!--<div class="row">
+			<div class="col2">
+				<div class="col1"></div>
+				<div class="col1"></div>
 			</div>
-			<br>
 			
-			<ul id="linkList" class="clearfix">
-				<li>
-					<a target="_blank" href="https://drive.google.com/folderview?id=0B5pMzfAiZLn4cU1BYjFKdWlXdVU&usp=sharing">
-						<i class="linkIcon icon-book"></i> Edu Repo
-					</a>
-				</li>
-				
-				<script>
-					var links = [
-						'GibFish Pay Calculator',
-						'UTAR Pass Mark Calculator',
-						'CSS Ripped Buttons',
-						'Facebook Profile Preview',
-						'Java Class Kickstart'
-					];
-					
-					links.sort();
-					
-					for (i=0; i<links.length; i++) {
-						var tempArr = links[i].split(' ');
-						tempArr[0] = tempArr[0].toLowerCase();
-						
-						var li = document.createElement('li');
-						var icon = document.createElement('i');
-						var a = document.createElement('a');
-						
-						icon.className = 'linkIcon icon-globe';
-						
-						a.href = tempArr.join('') + '.html';
-						a.appendChild(icon);
-						a.appendChild(document.createTextNode(links[i]));
-						
-						li.appendChild(a);
-						
-						document.getElementById('linkList').appendChild(li);
-					}
-				</script>
-			</ul>
+			<div class="col6">
+				<div class="col1"></div>
+				<div class="col3">
+					<div class="col1"></div>
+					<div class="col2"></div>
+				</div>
+				<div class="col1"></div>
+				<div class="col1"></div>
+			</div>
 			
-			<small class="box">
-				Written by <a target="_blank" href="https://sites.google.com/site/altbdoor/">altbdoor</a>.<br>
-				Credits to 
-				<a target="_blank" href="http://jquery.com/">JQuery</a>, 
-				<a target="_blank" href="http://www.bootstrapcdn.com//">Bootstrap CDN</a>, 
-				<a target="_blank" href="https://developers.google.com/speed/libraries/devguide">Google CDN</a>,
-				<a target="_blank" href="http://code.google.com/p/google-code-prettify/">Google Code Prettify</a>, 
-				<a target="_blank" href="https://drive.google.com/">Google Drive</a> and 
-				<a target="_blank" href="http://www.google.com/webfonts">Google Web Font</a>.<br>
-				<i class="icon-smile"></i> 2013 Unless stated otherwise, all files have No CopyRights, No License, 
-				in support of <a target="_blank" href="http://www.kopimi.com/kopimi/">KOPIMI</a>.
-			</small>
+			<div class="col1"></div>
+			<div class="col1"></div>
+			<div class="col1"></div>
+			<div class="col1"></div>
 			
 		</div>
 		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+		<div class="row">
+			<div class="col12">
+				asd
+			</div>
+		</div>
+		-->
+		<div class="nav nav-white">
+			<div class="row">
+				<a href="#" class="title float-left">Pixelly Framing</a>
+				<ul class="list list-float float-left">
+					<li class="active"><a href="#">ads</a></li>
+					<li><a href="#">ads</a></li>
+					<li><a href="#">ads</a></li>
+				</ul>
+				
+				<form class="float-right">
+					<input class="input" type="text">
+					<button class="btn btn-blue">asd</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		<div class="nav nav-black">
+			<div class="row">
+				<a href="#" class="title float-left">Pixelly Framing</a>
+				<ul class="list list-float float-right">
+					<li class="active"><a href="#">ads</a></li>
+					<li><a href="#">ads</a></li>
+					<li><a href="#">ads</a></li>
+				</ul>
+				
+				<form class="float-right">
+					<input class="input" type="text">
+					<input class="input" type="password">
+					<button class="btn btn-blue">asd</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		<button class="btn" onclick="$('body').toggleClass('retro')">hello</button>
+		<button class="btn btn-red">hello</button>
+		<button class="btn btn-yellow">hello</button>
+		<button class="btn btn-green">hello</button>
+		<button class="btn btn-blue">hello</button>
+		<button class="btn btn-purple">hello</button>
+		<button class="btn btn-black">hello</button>
+		
+		<script src="jquery.js"></script>
 	</body>
 </html>
