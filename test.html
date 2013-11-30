@@ -8,32 +8,34 @@
 	
 		<title>Test Ground</title>
 		
-		<link rel="stylesheet" href="psBase.css">
-		<link rel="stylesheet" href="psGridSystem.css">
 		<link rel="stylesheet" href="psStyleBase.css">
+		<link rel="stylesheet" href="psGridSystem.css">
 		
 		<style>
 			.row {background-color:blue; }
 			.col5 {background-color:red}
-			.col2 {background-color:green}
+			.col2 {background-color:green; height:200px}
 			.col3 {background-color:black; height:300px}
 			.col1 {background-color:silver; height:50px}
-			.col6 {background-color:gold; height:80px}
+			.col6 {background-color:gold}
 			.col1-3 {background-color:red; box-shadow:0 0 10px #000 inset; height:50px}
 			.col2-3 {background-color:blue; box-shadow:0 0 5px #0f0 inset; height:20px}
 		</style>
 	</head>
 	
-	<body>
+	<body class="text-black">
 		<div class="row">
-			<!--<div class="col2">
+			<div class="col2">
 				<div class="col1"></div>
 				<div class="col1"></div>
 			</div>
 			
 			<div class="col6">
 				<div class="col1"></div>
-				<div class="col3"></div>
+				<div class="col3">
+					<div class="col1"></div>
+					<div class="col2"></div>
+				</div>
 				<div class="col1"></div>
 				<div class="col1"></div>
 			</div>
@@ -41,15 +43,8 @@
 			<div class="col1"></div>
 			<div class="col1"></div>
 			<div class="col1"></div>
-			<div class="col1"></div>-->
+			<div class="col1"></div>
 			
-			<div class="col1-3">
-				
-			</div>
-			
-			<div class="col2-3">
-				asd
-			</div>
 		</div>
 		
 		<div class="row">
@@ -58,7 +53,16 @@
 			</div>
 		</div>
 		
-		<button class="btn btn-orange">hello</button>
-		<button class="btn btn-red">hello</button>
+		
+		
+		<button class="btn btn-large">hello</button>
+		<button class="btn btn-red btn-large">hello</button>
+		<input class="input input-large" type="text">
+		<textarea class="input input-block"></textarea>
+		<button class="btn btn-small btn-yellow">hello</button>
+		<button class="btn btn-green">hello</button>
+		<button class="btn btn-blue">hello</button>
+		<button class="btn btn-purple">hello</button>
+		<button class="btn btn-black">hello</button>
 	</body>
 </html>

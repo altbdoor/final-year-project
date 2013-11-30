@@ -1,21 +1,12 @@
 /*
  *	pixely speaking Grid CSS
- *
- *	Grid inspired from
- *	960 Grid System    @ http://960.gs/
- *
- *	Row clears from
- *	Nicolas Gallagher     @ http://nicolasgallagher.com/micro-clearfix-hack/
- *
- *	Lowest edge: IE8, FF3, Chrome 2, Safari 4, Opera 9.5
- *
  */
 
 /* desktop default ( 960 - 1199 )
 ==================================================*/
 body {width:960px; min-width:960px; margin-left:auto; margin-right:auto}
 
-.row {width:940px; min-width:940px; padding-left:10px; padding-right:10px; margin-left:auto; margin-right:auto; *zoom:1}
+.row {width:940px; min-width:940px; padding-left:10px; padding-right:10px; margin-left:auto; margin-right:auto}
 .row:before, .row:after {content:" ";display:table}
 .row:after {clear:both}
 
