@@ -7,8 +7,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 
 /* helper
 ==================================================*/
-body.text-16 {font-size:100%}
-body.text-14 {font-size:87.5%}
 .text-14 {font-size:14px}
 .text-16 {font-size:16px}
 
@@ -19,12 +17,11 @@ body.text-14 {font-size:87.5%}
 	box-shadow:none;
 	
 	-webkit-border-radius:0; 
-	-moz-border-radius:0; 
 	border-radius:0;
 }
 
-.text-white {color:#fff; text-shadow:0 0 1px rgba(255,255,255,0.3)}
-.text-black {color:#000; text-shadow:0 0 1px rgba(0,0,0,0.3)}
+.text-white {color:#fff}
+.text-black {color:#000}
 
 .text-left {text-align:left}
 .text-center {text-align:center}
@@ -37,20 +34,20 @@ body.text-14 {font-size:87.5%}
 .list:after, .clear:after {clear:both}
 
 .list {list-style:none; margin:0; padding:0}
-.list.list-float > li {float:left}
-.list.list-inline > li {display:inline-block}
+.list-float > li {float:left}
+.list-inline > li {display:inline-block}
+
+.spacer:before {content:" "}
 
 /* input 
 ==================================================*/
 .input {
-	border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.3); 
-	padding:5px; color:#000; vertical-align:middle;
-	
-	text-shadow:0 0 1px rgba(0,0,0,0.3);
+	border:1px solid #b2b2b2; line-height:normal; 
+	padding:0.25em; color:#000; vertical-align:middle;
 	
 	-webkit-border-radius:2px; 
-	-moz-border-radius:2px; 
 	border-radius:2px;
+	background-clip: padding-box;
 	
 	-webkit-box-shadow:0 0 2px rgba(0,0,0,0.3) inset;
 	box-shadow:0 0 2px rgba(0,0,0,0.3) inset;
@@ -64,17 +61,11 @@ select.input {padding:4px}
 select.input.input-large {padding:9px}
 .input.input-block {display:block; width:100%}
 
-/* button
+/* button and box
 ==================================================*/
-.btn {
-	border-width:1px; border-style:solid; border-color:rgba(0,0,0,0.3); text-decoration:none; 
-	color:#000; cursor:pointer; display:inline-block; background-color:#eee; 
-	padding:5px 10px; background-repeat:repeat-x; vertical-align:middle;
-	
-	-webkit-transition:background-color 0.5s ease;
-	-moz-transition:background-color 0.5s ease;
-	-o-transition:background-color 0.5s ease;
-	transition:background-color 0.5s ease;
+.btn, .box {
+	border:1px solid #a6a6a6;
+	background-color:#eee; background-repeat:repeat-x; 
 	
 	background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));
 	background-image:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
@@ -83,10 +74,24 @@ select.input.input-large {padding:9px}
 	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
 	
 	-webkit-border-radius:2px; 
-	-moz-border-radius:2px; 
 	border-radius:2px;
+	background-clip: padding-box;
+}
+
+.btn {
+	text-decoration:none; color:#000; cursor:pointer; display:inline-block; 
+	padding:0.25em 0.5em; vertical-align:middle; line-height:normal;
 	
-	text-shadow:0 0 1px rgba(0,0,0,0.3), 1px 1px 1px rgba(255,255,255,0.3)
+	-webkit-transition:background-color 0.5s ease;
+	-moz-transition:background-color 0.5s ease;
+	-o-transition:background-color 0.5s ease;
+	transition:background-color 0.5s ease;
+	
+	text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+	
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 .btn:hover {
@@ -95,25 +100,25 @@ select.input.input-large {padding:9px}
 
 .btn.btn-red, .btn.btn-yellow, .btn.btn-green, .btn.btn-blue, .btn.btn-purple, .btn.btn-black {
 	color:#fff;
-	text-shadow:0 0 1px rgba(255,255,255,0.3), 1px 1px 1px rgba(0,0,0,0.3)
+	text-shadow:1px 1px 1px rgba(0,0,0,0.3)
 }
 
-.btn.btn-red {background-color:#d32}
+.btn.btn-red, .box.box-red {background-color:#d32; border-color:#9a2317}
 .btn.btn-red:hover {background-color:#c12}
 
-.btn.btn-yellow {background-color:#fa1}
+.btn.btn-yellow, .box.box-yellow {background-color:#fa1; border-color:#b2760b}
 .btn.btn-yellow:hover {background-color:#f80}
 
-.btn.btn-green {background-color:#094}
+.btn.btn-green, .box.box-green {background-color:#094; border-color:#006a2f}
 .btn.btn-green:hover {background-color:#073}
 
-.btn.btn-blue {background-color:#06c}
+.btn.btn-blue, .box.box-blue {background-color:#06c; border-color:#00478e}
 .btn.btn-blue:hover {background-color:#04c}
 
-.btn.btn-purple {background-color:#a08}
+.btn.btn-purple, .box.box-purple {background-color:#a08; border-color:#76005f}
 .btn.btn-purple:hover {background-color:#807}
 
-.btn.btn-black {background-color:#444}
+.btn.btn-black, .box.box-black {background-color:#444; border-color:#2f2f2f}
 .btn.btn-black:hover {background-color:#222}
 
 .btn.btn-small {padding:2px 4px; font-size:0.857em}
@@ -123,13 +128,13 @@ select.input.input-large {padding:9px}
 /* disabled
 ==================================================*/
 .input[disabled], .btn[disabled], .btn[disabled]:hover {
-	background-image:none; background-color:#ddd; color:#888; cursor:default; border-color:rgba(0,0,0,0.3);
-	text-shadow:0 0 1px rgba(68,68,68,0.3), 1px 1px 1px rgba(255,255,255,0.3);
+	background-image:none; background-color:#ddd; color:#888; cursor:default; border-color:#9a9a9a;
+	text-shadow:1px 1px 1px rgba(255,255,255,0.3);
 }
 
 /* nav
 ==================================================*/
-.nav {min-height:3em}
+.nav {min-height:3em; line-height:normal}
 .nav:before, .nav:after {content:" ";display:table}
 .nav:after {clear:both}
 
@@ -146,7 +151,6 @@ select.input.input-large {padding:9px}
 
 .nav-black {
 	background-color:#333; color:#fff; border-bottom:1px solid #222;
-	text-shadow:0 0 1px rgba(255,255,255,0.3);
 	
 	background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.3)));
 	background-image:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
@@ -154,13 +158,12 @@ select.input.input-large {padding:9px}
 	background-image:-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.3));
 	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
 }
-.nav-black a {color:#ccc; text-shadow:0 0 1px rgba(204,204,204,0.3)}
-.nav-black .active {background-color:rgba(255,255,255,0.1)}
-.nav-black .active a, .nav-black a:hover {color:#fff; text-shadow:0 0 1px rgba(255,255,255,0.3)}
+.nav-black a {color:#ccc}
+.nav-black .active {background-color:#464646}
+.nav-black .active a, .nav-black a:hover {color:#fff}
 
 .nav-white {
 	background-color:#eee; color:#000; border-bottom:1px solid #ddd;
-	text-shadow:0 0 1px rgba(0,0,0,0.3);
 	
 	background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.1)));
 	background-image:-webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
@@ -168,20 +171,18 @@ select.input.input-large {padding:9px}
 	background-image:-o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.1));
 	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
 }
-.nav-white a {color:#444; text-shadow:0 0 1px rgba(68,68,68,0.3)}
-.nav-white .active {background-color:rgba(0,0,0,0.1)}
-.nav-white .active a, .nav-white a:hover {color:#000; text-shadow:0 0 1px rgba(0,0,0,0.3)}
+.nav-white a {color:#666}
+.nav-white .active {background-color:#ccc}
+.nav-white .active a, .nav-white a:hover {color:#000}
 
-.nav .nav-form {margin:0.45em 1em 0 1em}
-.nav .nav-form > *:first-child {margin-left:0}
-.nav .nav-form > * {margin-left:0.25em}
+.nav .nav-form {margin:0.5em 1em 0}
 
 /* code
 ==================================================*/
 .code {
 	border:1px solid #ccc; background-color:#f8f8f8; color:#c25; margin:0 0.1em; padding:0 0.3em;
-	text-shadow:0 0 1px rgba(204,34,85,0.3); 
-	-webkit-border-radius:2px; border-radius:2px
+	-webkit-border-radius:2px; border-radius:2px;
+	background-clip: padding-box;
 }
 
 /* table
@@ -191,7 +192,7 @@ select.input.input-large {padding:9px}
 .table.table-fill {width:100%}
 .table.table-comfy td, .table.table-comfy th {padding:1em 2em}
 
-.table.table-border {border-collapse:separate; border:1px solid #ccc; -webkit-border-radius:2px; border-radius:2px}
+.table.table-border {border-collapse:separate; border:1px solid #ccc; -webkit-border-radius:2px; border-radius:2px; background-clip: padding-box}
 .table.table-border td, .table.table-border th {border-left:1px solid #ccc; border-top:1px solid #ccc}
 .table.table-border tr:first-child td, .table.table-border tr:first-child th {border-top:0}
 .table.table-border tr td:first-child, .table.table-border tr th:first-child {border-left:0}
