@@ -16,11 +16,11 @@
 
 .text-white {color:#fff}
 .text-black {color:#000}
-.text-red {}
-.text-amber {}
-.text-green {}
-.text-blue {}
-.text-purple {}
+.text-red {color:#d32}
+.text-yellow {color:#f80}
+.text-green {color:#094}
+.text-blue {color:#06c}
+.text-purple {color:#a08}
 
 .text-left {text-align:left}
 .text-center {text-align:center}
