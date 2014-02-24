@@ -110,33 +110,32 @@
 
 /* nav
 ==================================================*/
-.nav {min-height:3em; line-height:normal}
+.nav {min-height:3em; line-height:1}
 .nav:before, .nav:after {content:" ";display:table}
 .nav:after {clear:both}
 
 .nav a {
 	text-decoration:none;
-	
 	transition:color 0.5s ease;
 }
 .nav .title {font-size:1.5em; line-height:2; margin:0 1em}
 .nav .list a {display:block; padding:0 1em; line-height:3}
 
 .nav-black {
-	background-color:#333; color:#fff; border-bottom:1px solid #222;
-	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+	background-color:#111; color:#fff; border-bottom:1px solid #000;
+	background-image:linear-gradient(to bottom, #222, #000)
 }
-.nav-black a {color:#ccc}
-.nav-black .active {background-color:#464646}
-.nav-black .active a, .nav-black a:hover {color:#fff}
+.nav-black a {color:#bbb}
+.nav-black .active {background-color:#333}
+.nav-black .active a, .nav-black a:hover {color:#ddd}
 
 .nav-white {
 	background-color:#eee; color:#000; border-bottom:1px solid #ddd;
-	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+	background-image:linear-gradient(to bottom, #fff, #ddd)
 }
-.nav-white a {color:#666}
+.nav-white a {color:#444}
 .nav-white .active {background-color:#ccc}
-.nav-white .active a, .nav-white a:hover {color:#000}
+.nav-white .active a, .nav-white a:hover {color:#222}
 
 .nav .nav-form {margin:0.5em 1em 0}
 
@@ -164,8 +163,6 @@
 .table.table-border-row tr {border-bottom:1px solid #ccc}
 .table.table-stripe tr:nth-child(2n) {background-color:#f8f8f8}
 
-/* form
-==================================================*/
 
 
 
