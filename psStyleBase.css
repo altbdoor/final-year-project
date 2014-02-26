@@ -1,18 +1,36 @@
 /* Custom styles
 ==================================================*/
 
+/* retro
+==================================================*/
+.retro-gradient .btn,
+.retro-gradient .box,
+.retro-gradient .nav {
+	background-image:none !important;
+}
+
+.retro-radius .input,
+.retro-radius .btn,
+.retro-radius .box,
+.retro-radius .code,
+.retro-radius .progress,
+.retro-radius .table.table-border,
+.retro-radius .dropdown-menu {
+	border-radius:0 !important;
+}
+
+.retro-shadow .input,
+.retro-shadow .progress {
+	box-shadow:none !important;
+}
+
 /* helper
 ==================================================*/
 .text-14 {font-size:14px}
 .text-16 {font-size:16px}
 
-.retro .input, .retro .btn, .retro .box,
-.retro .nav, .retro .code, .retro .progress,
-.retro .table.table-border {
-	background-image:none;
-	box-shadow:none;
-	border-radius:0;
-}
+.text-large {font-size:1.5em}
+.text-small {font-size:0.857em}
 
 .text-white {color:#fff}
 .text-black {color:#000}
@@ -51,6 +69,8 @@
 	
 	box-sizing:border-box;
 }
+.input.input-small {font-size:0.857em}
+.input.input-large {font-size:1.5em}
 .input.input-block {display:block; width:100%}
 
 /* button and box
@@ -59,12 +79,12 @@
 	border:1px solid #bebebe;
 	background-color:#eee; background-repeat:repeat-x; 
 	border-radius:2px;
-	background-clip: padding-box;
-	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.2));
+	background-clip:padding-box;
 }
 
 .btn {
 	text-decoration:none; color:#000; cursor:pointer; display:inline-block; 
+	background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.2));
 	padding:0.25em 0.5em; vertical-align:middle; line-height:normal;
 	transition:background-color 0.5s ease;
 	text-shadow:1px 1px 1px rgba(255,255,255,0.3);
@@ -103,17 +123,22 @@
 .btn.btn-black:hover {background-color:#3d3d3d}
 .btn.btn-black:active {background-color:#696969}
 
-.btn.btn-small {padding:2px 4px; font-size:0.857em}
-.btn.btn-large {padding:10px 20px; font-size:1.5em}
+.btn.btn-small {font-size:0.857em}
+.btn.btn-large {font-size:1.5em}
 .btn.btn-block {padding-left:0; padding-right:0; display:block; width:100%}
 
 /* btn group
 ==================================================*/
+.btn-group {display:inline-block}
 .btn-group:before, .btn-group:after {content:" "; display:table}
 .btn-group:after {clear:both}
-.btn-group > .btn:first-child {border-radius:2px 0 0 2px}
-.btn-group > .btn {float:left; border-radius:0}
-.btn-group > .btn:last-child {border-radius:0 2px 2px 0}
+.btn-group-horiz > .btn:first-child {border-radius:2px 0 0 2px}
+.btn-group-horiz > .btn {float:left; border-radius:0}
+.btn-group-horiz > .btn:last-child {border-radius:0 2px 2px 0}
+
+.btn-group-vert > .btn:first-child {border-radius:2px 2px 0 0}
+.btn-group-vert > .btn {display:block; border-radius:0; box-sizing:border-box; width:100%}
+.btn-group-vert > .btn:last-child {border-radius:0 0 2px 2px}
 
 /* disabled
 ==================================================*/
@@ -133,7 +158,7 @@
 	transition:color 0.5s ease;
 }
 .nav .title {font-size:1.5em; line-height:2; margin:0 1em}
-.nav .list a {display:block; padding:0 1em; line-height:3}
+.nav .list > li > a {display:block; padding:0 1em; line-height:3}
 
 .nav-black {
 	background-color:#111; color:#fff; border-bottom:1px solid #000;
@@ -157,8 +182,7 @@
 ==================================================*/
 .code {
 	border:1px solid #ccc; background-color:#f8f8f8; color:#c25; margin:0 0.1em; padding:0 0.3em;
-	border-radius:2px;
-	background-clip: padding-box;
+	border-radius:2px; background-clip: padding-box;
 }
 
 /* table
@@ -168,24 +192,29 @@
 .table.table-fill {width:100%}
 .table.table-comfy td, .table.table-comfy th {padding:1em 2em}
 
-.table.table-border {border-collapse:separate; border:1px solid #ccc; border-radius:2px; background-clip: padding-box}
-.table.table-border td, .table.table-border th {border-left:1px solid #ccc; border-top:1px solid #ccc}
+.table.table-border {border-collapse:separate; border:1px solid #bebebe; border-radius:2px; background-clip: padding-box}
+.table.table-border td, .table.table-border th {border-left:1px solid #bebebe; border-top:1px solid #bebebe}
 .table.table-border tr:first-child td, .table.table-border tr:first-child th {border-top:0}
 .table.table-border tr td:first-child, .table.table-border tr th:first-child {border-left:0}
 
-.table.table-border-row tr:first-child {border-top:1px solid #ccc}
-.table.table-border-row tr {border-bottom:1px solid #ccc}
+.table.table-border-row tr:first-child {border-top:1px solid #bebebe}
+.table.table-border-row tr {border-bottom:1px solid #bebebe}
 .table.table-stripe tr:nth-child(2n) {background-color:#f8f8f8}
 
 /* progress
 ==================================================*/
 .progress {height:20px; background-color:#ddd; box-shadow:0 0 2px rgba(0,0,0,0.3) inset; border-radius:2px; background-clip:padding-box}
-.progress > .box {border:0; height:100%; transition:width 0.5s ease}
+.progress > .box {border:0; height:100%; transition:width 0.5s ease; background-image:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.2))}
 
-
-
-
-
+/* dropdown
+==================================================*/
+.dropdown > .dropdown-menu {
+	display:none; position:absolute; z-index:200; border-radius:2px; margin:0.2em 0 0; padding:0; line-height:normal;
+	list-style:none; border:1px solid #bebebe; background-color:#f8f8f8; background-clip:padding-box; min-width:200px
+}
+.dropdown-menu > .dropdown-spacer {border-top:1px solid #bebebe}
+.dropdown-menu > li > a {display:block; text-decoration:none; color:#000; padding:0.5em 1em; transition:background-color 0.5s ease}
+.dropdown-menu > li > a:hover {color:#000; background-color:#ccc}
 
 
 

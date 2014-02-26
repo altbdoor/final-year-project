@@ -65,7 +65,14 @@
 				<a href="#" class="title float-left">Pixelly Framing</a>
 				<ul class="list list-float float-left">
 					<li class="active"><a href="#">ads</a></li>
-					<li><a href="#">ads</a></li>
+					<li class="dropdown" data-dropdown-animation="fade">
+						<a href="#">ads</a>
+						<ul id="dropdownList" class="dropdown-menu">
+							<li><a class="" href="#">the red brown fox</a></li>
+							<li><a class="">maybe jumped over</a></li>
+							<li><a class="">the red potato river as far</a></li>
+						</ul>
+					</li>
 					<li><a href="#">ads</a></li>
 				</ul>
 				
@@ -84,6 +91,15 @@
 				<a href="#" class="title float-left">Pixelly Framing</a>
 				<ul class="list list-float float-right">
 					<li class="active"><a href="#">ads</a></li>
+					<li class="dropdown" data-dropdown-trigger="hover">
+						<a href="#">ads</a>
+						<ul id="dropdownList" class="dropdown-menu">
+							<li><a class="" href="#">the red brown fox</a></li>
+							<li class="dropdown-spacer"></li>
+							<li><a class="">maybe jumped over</a></li>
+							<li><a class="">the red potato river as far</a></li>
+						</ul>
+					</li>
 					<li><a href="#">ads</a></li>
 					<li><a href="#">ads</a></li>
 				</ul>
@@ -95,12 +111,38 @@
 		</div>
 		<br>
 		<button class="btn btn-red" disabled>hello</button>
-		<button class="btn" onclick="$('body').toggleClass('retro')">hello</button>
+		<button class="btn" onclick="$('body').toggleClass('retro-gradient retro-shadow retro-radius')">hello</button>
 		<button class="btn btn-red">hello</button>
 		<button class="btn btn-yellow">hello</button>
-		<button class="btn btn-green">hello</button>
-		<button class="btn btn-blue">hello</button>
+		<button class="btn btn-small btn-green">hello</button>
+		<br><br><br>
+		<ul class="list list-float">
+			<li>asd</li>
+			<li>
+				<div class="dropdown">
+					<button class="btn btn-blue">hello</button>
+					<ul id="dropdownList" class="dropdown-menu">
+						<li><a class="" href="#">the red brown fox</a></li>
+						<li><a class="">maybe jumped over</a></li>
+						<li class="dropdown-spacer"></li>
+						<li><a class="">the red potato river as far</a></li>
+					</ul>
+				</div>
+			</li>
+			<li>asd</li>
+		</ul>
+		<br>
+		
+		
 		<button class="btn btn-purple" onclick="$('#asd').width(280)">hello</button>
+		
+		<div class="dropdown">
+			<button class="btn btn-blue">hello</button>
+			<div class="dropdown-menu">
+				asd
+			</div>
+		</div>
+				
 		<a class="btn btn-black">hello</a>
 		<label class="btn btn-red"><input type="radio"> Yes</label>
 		<br>
@@ -127,9 +169,9 @@
 			</tr>
 		</table>
 		
-		<div class="btn-group">
+		<div class="btn-group btn-group-vert">
 			<button class="btn">hello</button>
-			<button class="btn btn-yellow">hello</button>
+			<button class="btn btn-yellow">potato of the red fox</button>
 			<button class="btn btn-green">hello</button>
 			<button class="btn">hello</button>
 			<button class="btn btn-blue">hello</button>
@@ -137,10 +179,11 @@
 		</div>
 		
 		<span class="text-purple">push this left</span> <div class="progress" style="width:300px; margin-left:200px">
-			<div id="asd" class="box box-red" style="width:60%"></div>
+			<div id="asd" class="box box-red" style="width:20px"></div>
 		</div>
 		<br>
 		asd
 		<script src="jquery.js"></script>
+		<script src="plugin.js"></script>
 	</body>
 </html>
