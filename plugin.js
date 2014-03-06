@@ -2,10 +2,27 @@
 (function () {
 	/* setup
 	==================================================*/
-	if (typeof(psSetup) !== 'undefined' && typeof(psSetup) === 'object') {
-		if (psSetup.dropdownAnimation) {
+	var defaultSetup = {
+		dropdownAnimation: 'show',
+		dropdownTrigger: 'click'
+		
+	}
+	
+	function checkSetup (name, value) {
+		if (typeof(psSetup[name]) !== 'undefined') {
 			
 		}
+	}
+	
+	if (typeof(psSetup) !== 'undefined' && typeof(psSetup) === 'object') {
+		if (checkSetup())
+		
+		if (typeof(psSetup.dropdownAnimation) !== 'undefined' && (psSetup.dropdownAnimation == 'fade' || psSetup.dropdownAnimation == 'slide')) {
+			defaultSetup.dropdownAnimation = psSetup.dropdownAnimation;
+		}
+		
+		
+		
 	}
 	
 	/* dropdown
