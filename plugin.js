@@ -133,6 +133,11 @@
 	
 	$('.dropdown').dropdown();
 	
+	$(document).on('click', function (e) {
+		e.stopPropagation();
+		animateObject($('.dropdown-menu'), '', 'none');
+	});
+	
 	/* modal
 	==================================================*/
 	$.fn.modal = function (operation) {
@@ -149,6 +154,16 @@
 					
 					$(modal).fadeIn(200, function () {
 						animateObject(modalBox, animation, 'block');
+					});
+				});
+				
+				$(modalBox).find('.modal-dismiss').each(function () {
+					$(this).on('click', function (e) {
+						e.preventDefault();
+						e.stopPropagation();
+						
+						animateObject(modalBox, animation, 'none');
+						$(modal).fadeOut(200);
 					});
 				});
 			});
