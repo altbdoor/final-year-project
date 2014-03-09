@@ -1,93 +1,176 @@
 /* enclosed to prevent namespace pollution */
-(function () {
+(function ($) {
 	/* setup
 	==================================================*/
 	var defaultSetup = {
+		navMenuAnimation: 'show',
+		dropdownTrigger: 'click',
 		dropdownAnimation: 'show',
-		dropdownTrigger: 'click'
-		
+		modalBoxAnimation: 'fade'
+	};
+	
+	if (typeof(pxSetup) !== 'undefined') {
+		defaultSetup = $.extend(defaultSetup, pxSetup);
 	}
 	
-	function checkSetup (name, value) {
-		if (typeof(psSetup[name]) !== 'undefined') {
-			
+	/* animate object
+	==================================================*/
+	function animateObject (object, animation, display, callback) {
+		var promise;
+		
+		if (display == 'block') {
+			if (animation == 'fade') {
+				promise = $(object).stop(true, true).fadeIn(200).promise();
+			}
+			else if (animation == 'slide') {
+				promise = $(object).stop(true, true).slideDown(200).promise();
+			}
+			else {
+				promise = $(object).stop(true, true).show().promise();
+			}
+		}
+		else if (display == 'none') {
+			if (animation == 'fade') {
+				promise = $(object).stop(true, true).fadeOut(200).promise();
+			}
+			else if (animation == 'slide') {
+				promise = $(object).stop(true, true).slideUp(200).promise();
+			}
+			else {
+				promise = $(object).stop(true, true).hide().promise();
+			}
+		}
+		else if (display == 'toggle') {
+			if (animation == 'fade') {
+				promise = $(object).stop(true, true).fadeToggle(200).promise();
+			}
+			else if (animation == 'slide') {
+				promise = $(object).stop(true, true).slideToggle(200).promise();
+			}
+			else {
+				promise = $(object).stop(true, true).toggle().promise();
+			}
+		}
+		
+		if (typeof(callback) !== 'undefined') {
+			$.when(promise).done(function () {
+				callback(this);
+			});
 		}
 	}
 	
-	if (typeof(psSetup) !== 'undefined' && typeof(psSetup) === 'object') {
-		if (checkSetup())
-		
-		if (typeof(psSetup.dropdownAnimation) !== 'undefined' && (psSetup.dropdownAnimation == 'fade' || psSetup.dropdownAnimation == 'slide')) {
-			defaultSetup.dropdownAnimation = psSetup.dropdownAnimation;
-		}
-		
-		
-		
+	/* nav trigger
+	==================================================*/
+	var navTrigger = $('.nav-trigger');
+	if (navTrigger.length > 0) {
+		$(navTrigger).each(function () {
+			$(this).on('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				
+				var animation = $(this).data('nav-menu-animation') || defaultSetup.navMenuAnimation,
+					navmenu = $(this).parent().siblings('.nav-menu').stop(true, true);
+				
+				animateObject(navmenu, animation, 'toggle');
+			});
+		});
 	}
 	
 	/* dropdown
 	==================================================*/
-	var allMenu = $('.dropdown-menu');
-	
-	$('.dropdown').each(function () {
-		var mode = $(this).data('dropdown-trigger'),
-			anim = $(this).data('dropdown-animation'),
-			btn = $(this).children('button, a').first(),
-			menu = $(this).children('.dropdown-menu').first();
-		
-		if (mode == 'hover' || mode == 'mouseover') {
-			var hoverState = false,
-				hoverTimer;
-			
-			$(this).on('mouseenter', function () {
-				hoverState = true;
+	$.fn.dropdown = function (operation) {
+		if (typeof(operation) === 'undefined') {
+			return this.each(function () {
+				var dropdown = this,
+					trigger = $(dropdown).data('dropdown-trigger') || defaultSetup.dropdownTrigger,
+					animation = $(dropdown).data('dropdown-animation') || defaultSetup.dropdownAnimation,
+					menu = $(dropdown).children('.dropdown-menu').first(),
+					button = $(dropdown).children('button, a').first();
 				
-				$(allMenu).not(menu).hide();
-				
-				if (anim == 'fade') {
-					$(menu).stop(true, true).fadeIn();
-				}
-				else if (anim == 'slide') {
-					$(menu).stop(true, true).slideDown();
+				if (trigger == 'hover' || trigger == 'mouseover') {
+					var hoverTimer;
+					
+					dropdown.hoverState = false;
+					
+					$(dropdown).on('mouseenter', function () {
+						dropdown.hoverState = true;
+						
+						animateObject($('.dropdown-menu').not(menu), '', 'none');
+						animateObject(menu, animation, 'block');
+					}).on('mouseleave', function () {
+						dropdown.hoverState = false;
+						clearTimeout(hoverTimer);
+						hoverTimer = setTimeout(function () {
+							if (!dropdown.hoverState) {
+								animateObject(menu, animation, 'none');
+							}
+						}, 200);
+					});
 				}
 				else {
-					$(menu).show();
-				}
-			}).on('mouseleave', function () {
-				hoverState = false;
-				clearTimeout(hoverTimer);
-				hoverTimer = setTimeout(function () {
-					if (!hoverState) {
-						if (anim == 'fade') {
-							$(menu).stop(true, true).fadeOut();
-						}
-						else if (anim == 'slide') {
-							$(menu).stop(true, true).slideUp();
-						}
-						else {
-							$(menu).hide();
-						}
-					}
-				}, 200);
-			});
-		}
-		else {
-			$(btn).on('click', function () {
-				$(allMenu).not(menu).hide();
-				
-				if (anim == 'fade') {
-					$(menu).stop(true, true).fadeToggle();
-				}
-				else if (anim == 'slide') {
-					$(menu).stop(true, true).slideToggle();
-				}
-				else {
-					$(menu).toggle();
+					$(button).on('click', function (e) {
+						e.preventDefault();
+						e.stopPropagation();
+						
+						animateObject($('.dropdown-menu').not(menu), '', 'none');
+						animateObject(menu, animation, 'toggle');
+					});
 				}
 			});
 		}
-	});
+		else if (operation == 'show' || operation == 'hide') {
+			return this.each(function () {
+				var dropdown = this,
+					animation = $(dropdown).data('dropdown-animation') || defaultSetup.dropdownAnimation,
+					menu = $(dropdown).children('.dropdown-menu').first(),
+					display = (operation == 'show' ? 'block' : 'none');
+				
+				animateObject($('.dropdown-menu').not(menu), '', 'none');
+				animateObject(menu, animation, display);
+			});
+		}
+	};
 	
-	/* 
+	$('.dropdown').dropdown();
+	
+	/* modal
 	==================================================*/
-})();
+	$.fn.modal = function (operation) {
+		var modal = $('.modal').first();
+		
+		if (typeof(operation) === 'undefined') {
+			return this.each(function () {
+				var modalBox = $('#' + $(this).data('modal-box-target')),
+					animation = $(modalBox).data('modal-box-animation') || defaultSetup.modalBoxAnimation;
+				
+				$(this).on('click', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					$(modal).fadeIn(200, function () {
+						animateObject(modalBox, animation, 'block');
+					});
+				});
+			});
+		}
+		else if (operation == 'show' || operation == 'hide') {
+			var animation = $(this).data('modal-box-animation') || defaultSetup.modalBoxAnimation;
+			
+			if (operation == 'show') {
+				$(modal).fadeIn(200, function () {
+					animateObject(this, animation, 'block');
+				});
+			}
+			else {
+				animateObject(this, animation, 'none');
+				$(modal).fadeOut(200);
+			}
+			
+			return this;
+		}
+	};
+	
+	$('.modal-trigger').modal();
+	
+	
+})(jQuery);

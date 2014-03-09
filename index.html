@@ -9,8 +9,7 @@
 		<title>Test Ground</title>
 		
 		<link rel="stylesheet" href="normalize.css">
-		<link rel="stylesheet" href="psStyleBase.css">
-		<link rel="stylesheet" href="psStyleSystem.css">
+		<link rel="stylesheet" href="psBase.css">
 		
 		<link rel="stylesheet" href="psGridSystem.css">
 		
@@ -31,6 +30,12 @@
 	</head>
 	
 	<body class="text-black text-14">
+		<div class="modal modal-black">
+			<div id="testModal" class="modal-box" style="background-color:white;padding-top:100px" data-modal-box-animation="slide">
+				asd
+			</div>
+		</div>
+		
 		<!--<div class="row">
 			<div class="col2">
 				<div class="col1"></div>
@@ -61,8 +66,8 @@
 		</div>
 		-->
 		<div class="nav nav-white">
-			<div class="">
-				<a href="#" class="nav-menu float-left">
+			<div class="nav-inner">
+				<a href="#" class="nav-trigger float-left">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -71,7 +76,7 @@
 				<a href="#" class="title float-left">Pixelly Framing</a>
 				<ul class="list list-float float-left">
 					<li class="active"><a href="#">ads</a></li>
-					<li class="dropdown" data-dropdown-animation="fade">
+					<li class="dropdown dropdown-open" data-dropdown-animation="fade">
 						<a href="#">ads</a>
 						<ul id="dropdownList" class="dropdown-menu">
 							<li><a class="" href="#">the red brown fox</a></li>
@@ -90,11 +95,15 @@
 					<button class="btn ">asd</button>
 				</form>
 			</div>
+			
+			<div class="nav-menu">
+				asd
+			</div>
 		</div>
 		<br>
 		<div class="nav nav-black">
-			<div class="row">
-				<a href="#" class="nav-menu float-left">
+			<div class="nav-inner row">
+				<a href="#" class="nav-trigger float-left">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -126,7 +135,7 @@
 		<button class="btn" onclick="$('body').toggleClass('retro-gradient retro-shadow retro-radius')">hello</button>
 		<button class="btn btn-red">hello</button>
 		<button class="btn btn-yellow">hello</button>
-		<button class="btn btn-small btn-green">hello</button>
+		<button class="btn btn-small btn-green modal-trigger" data-modal-box-target="testModal">hello</button>
 		<br><br><br>
 		<ul class="list list-float">
 			<li>asd</li>
@@ -196,6 +205,11 @@
 		<br>
 		asd
 		<script src="jquery.js"></script>
+		<script>
+			var pxSetup = {
+				navMenuAnimation: 'fade'
+			};
+		</script>
 		<script src="plugin.js"></script>
 	</body>
 </html>
