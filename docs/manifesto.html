@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Manifesto :: Pixelly Framing Docs</title>
+		
+		<link rel="stylesheet" href="../css/normalize.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/pf-base.css">
+		<link rel="stylesheet" href="../css/pf-grid.css">
+		<link rel="stylesheet" href="docs-style.css">
+		
+		<script src="../js/prefixfree.min.js"></script>
+	</head>
+	
+	<body class="text-16">
+		<div class="nav nav-black nav-fixed">
+			<div class="clear">
+				<a href="." class="nav-title float-left">Pixelly Framing</a>
+				
+				<ul class="list list-float float-left">
+					<li><a href="index.html">Home</a>
+					<li><a href="grid.html">Grid</a>
+					<li><a href="base-css.html">Base CSS</a>
+					<li><a href="javascript.html">JavaScript</a>
+					<li class="active"><a href="#"><i class="icon-plus-sign"></i> Manifesto</a>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12">
+				<h1 class="text-center">The Pixelly Framing Manifesto</h1>
+				
+				<p class="text-center"><i class="icon-info-sign"></i> Written by altbdoor, 2014</p>
+				
+				<hr>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col3"></div>
+			
+			<div class="col6" style="word-wrap:break-word">
+				<p>Before developing this HTML framework as my final year project, I have worked with a team of friends to develop a handful of websites and web applications. Some of them were successful, some were not. Throughout the journey, I gathered a lot of experience, both good and bad. Based on this experience of a year or so, I worked on this framework.</p>
+				
+				<p>Different people have different opinion on what makes a good web, good. Similarly, I have my own perspectives and views, bent and shaped over the years I spent on <a target="_blank" href="http://notepad-plus-plus.org/">Notepad++</a> and <a target="_blank" href="https://www.mozilla.org/en-US/firefox/">Mozilla Firefox</a>. Of course, there are a number of people who have influenced me as well, such as <a target="_blank" href="http://nicolasgallagher.com/">Nicolas Gallagher</a> and <a target="_blank" href="http://www.aaronsw.com/">Aaron Swartz</a>, to name a few.</p>
+				
+				<p>While developing this framework, a few rules were set in my mind.</p>
+				
+				<ol>
+					<li><b>Customizable, reusable, freedom <i class="icon-beer"></i>.</b>
+					<li>Old <b>Internet Explorer</b> versions can burn in hell for what it's worth.
+					<li>Do not <b>redesign the whole wheel</b>.
+					<li><b>Browsers know best.</b>
+				</ol>
+				
+				<hr>
+				<h3>Customizable, reusable, freedom</h3>
+				
+				<p>This is one of the main reasons why I made this framework. I have had my fair share of experience with a number of frameworks. Most of the time, styles are directly applied to elements. Want to use the default <code class="code">&lt;input type="button"&gt;</code>? Nope. Its already styled to death. What about an innocent <code class="code">&lt;p&gt;</code>? Nope, that margins done got rigged too.</p>
+				
+				<p>Frameworks provide an array of features, but sometimes too many, to a point where it starts to kill customizability. When it becomes difficult to customize, developers tend to stick to the available options (because it just werks <sup>TM</sup>), and ended up farming a bunch of same looking websites.</p>
+				
+				<p class="text-right"><small>And then developers get blamed for not being creative.</small></p>
+				
+				<p>What is important here is the freedom to choose. Frameworks should provide an array of features, but not force them on the developers. The learning curve will be much greater than that of one that does not, but in turn, developers are able to get the desired output. In addition, while going through the curves, developers may be able to pick up a thing or two, and not kept in the dark on how those magical arrows appear on dropdown boxes.</p>
+				
+				<p>That is why I left many, if not all basic elements unstyled. I provide some basic styles, but developers are free to opt out.</p>
+				
+				<p>Inadvertently, if the code base is customizable, it becomes reusable. Since minor changes could make the code produce different output, the code base can then be used on different projects for different purposes. That is one of the main aims of this project, noticable with the extensive number of classes used. Classes like <code class="code">text-center</code> can be reused on nearly all projects.</p>
+				
+				<hr>
+				<h3>Internet Explorer</h3>
+				
+				<p>Yes, Internet Explorer (IE) is getting better as we speak. However, the legacy that IE has left behind is certainly one to be afraid of. Asterisk hacks, <code class="code">ms-filter</code>, weird standards out of nowhere, are just some of the abominations developed by IE. Now as much as developers want to stray out of IE, it still has a pretty large share of the Internet market.</p>
+				
+				<p>Therefore, this framework only supports IE 8 and above. This is still a far throw from sending a large <code class="code"><i class="icon-thumbs-down-alt"></i> YOU</code> message to IE users (and IE), but I suppose IE 8 is decent enough for supporting <code class="code">box-sizing</code>.</p>
+				
+				<p>Therefore, it is wise to catch the old IE versions with a JavaScript feature detection, and send them to a better place for you and for me.</p>
+				
+				<hr>
+				<h3>Redesign the Whole Wheel</h3>
+				
+				<p>Out there in the vast seas of Internet, plugins are a dime for dozen. From lightboxes to string compression, its been done before by many established developers. Some of the codes are available under permissive licenses, which allow developers to utilize it for commercial or non-commercial purposes.</p>
+				
+				<p>However, not all plugins work nice. Some are last updated in the 1990s, some are not playing nice with other plugins and some are just not working at all. At times, developers have to redesign the wheel, so that it fits the (sports) car properly. Hence, do not redesign the whole wheel. Just the rims, maybe.</p>
+				
+				<hr>
+				<h3>Browsers Know Best</h3>
+				
+				<p>Certain default stylesheets are there for a good reason. The simplest example would be input outlines, which are abused to death with most frameworks. Mozilla Firefox have them in a dotted outline after clicking, while Google Chrome opted for a blue shadow on focus.</p>
+				
+				<p>I do not tamper with most of the default stylesheets for two reasons. One, because these browsers have implemented them for a good reason. The design decisions would most probably be backed by a standard or an internal research. Two, because it allows developers to style them on their own.</p>
+				
+				<p>I do, however, utilize Normalize.CSS, as it prevents magical margins and paddings from appearing in stylesheets.</p>
+				
+				<hr>
+				
+				<p>With these in mind, this framework may not be right for everyone out there. As a Malay proverb goes...</p>
+				
+				<blockquote>
+					<i class="icon-quote-left"></i> Banyak udang, banyak garam<br>
+					&nbsp;Banyak orang, banyak ragam <i class="icon-quote-right"></i>
+				</blockquote>
+				
+				<p>...which roughly translates to how different people have different preferences.</p>
+				
+				<p>Regardless, I thank you for your time, reading through all this. At least now it gives you a reason to not use this framework.</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12 text-center">
+				<hr>
+				<small>
+					Developed with freedom in mind by altbdoor<br>
+					Code licensed under <a target="_blank" href="http://opensource.org/licenses/MIT">MIT</a>
+				</small>
+			</div>
+		</div>
+		
+		<script src="../js/yepnope.min.js"></script>
+		<script>
+			yepnope([
+				'../js/jquery.min.js',
+				'../js/pf-plugin.js'
+			]);
+		</script>
+	</body>
+</html>

@@ -58,8 +58,6 @@
 .list-float > li {float:left}
 .list-inline > li {display:inline-block}
 
-.spacer:before {content:" "}
-
 /* input 
 ==================================================*/
 .input {
@@ -173,7 +171,7 @@
 	text-decoration:none;
 	transition:color 0.5s ease;
 }
-.nav .title {font-size:1.5em; line-height:2; margin:0 1em}
+.nav .nav-title {font-size:1.5em; line-height:2; margin:0 1em}
 .nav .list > li > a, .nav .list > li > span {display:block; padding:0 1em; line-height:3}
 
 .nav.nav-black {

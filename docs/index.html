@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Pixelly Framing Docs</title>
+		
+		<link rel="stylesheet" href="../css/normalize.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/pf-base.css">
+		<link rel="stylesheet" href="../css/pf-grid.css">
+		<link rel="stylesheet" href="docs-style.css">
+		
+		<style>.row {border-top:1px dashed #bebebe; padding:20px 0}</style>
+		
+		<script src="../js/prefixfree.min.js"></script>
+	</head>
+	
+	<body class="text-16">
+		<div class="nav nav-black nav-fixed">
+			<div class="clear">
+				<a href="." class="nav-title float-left">Pixelly Framing</a>
+				
+				<ul class="list list-float float-left">
+					<li class="active"><a href="#">Home</a>
+					<li><a href="grid.html">Grid</a>
+					<li><a href="base-css.html">Base CSS</a>
+					<li><a href="javascript.html">JavaScript</a>
+					<li><a href="manifesto.html"><i class="icon-plus-sign"></i> Manifesto</a>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="attn" class="text-center">
+			<h1>Pixelly Framing</h1>
+			<p><i class="icon-thumbs-up-alt"></i> A less restrictive HTML framework to develop with</p>
+		</div>
+		
+		<div class="row">
+			<div class="col12 text-center">
+				<h1>What is Pixelly Framing?</h1>
+				<p>A HTML framework which gives more freedom to developers in terms of customizability and reusability,<br>
+				bundled along with some advanced CSS and JS implementations</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col4">
+				<h2 class="text-center">Grid</h2>
+				
+				<ul class="list list-inline text-center text-red">
+					<li><i class="desc-icons icon-mobile-phone"></i>
+					<li><i class="desc-icons icon-desktop"></i>
+				</ul>
+				
+				<p>Two sets of grid to work with. A fluid grid system for smaller viewports, which can be used for larger viewports as well. A 12-column responsive grid system specifically for larger viewports.</p>
+			</div>
+			
+			<div class="col4">
+				<h2 class="text-center">Base CSS</h2>
+				
+				<ul class="list list-inline text-center text-green">
+					<li><i class="desc-icons icon-archive"></i>
+					<li><i class="desc-icons icon-magic"></i>
+				</ul>
+				
+				<p>A comprehensive set of modular CSS rules, consisting of buttons, inputs, navigations, tables and many more helpful rules. With help from <a target="_blank" href="http://necolas.github.io/normalize.css/">Normalize.CSS</a> and <a target="_blank" href="http://fontawesome.io/">Font Awesome</a>, whip websites into shape quickly!</p>
+			</div>
+			
+			<div class="col4">
+				<h2 class="text-center">JavaScript</h2>
+				
+				<ul class="list list-inline text-center text-blue">
+					<li><i class="desc-icons icon-gears"></i>
+					<li><i class="desc-icons icon-wrench"></i>
+				</ul>
+				
+				<p>Comes ready with some basic <a target="_blank" href="http://www.jquery.com/">JQuery</a> plugins, allowing developers to customize them or use other available plugins. In addition, <a target="_blank" href="http://yepnopejs.com/">yepnope.js</a> and <a target="_blank" href="http://leaverou.github.io/prefixfree/">-prefix-free</a> are included too.</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col5 text-right">
+				<h1>Read the <a href="manifesto.html">Manifesto</a> to learn why this link is not styled, and other design decisions</h1>
+			</div>
+			
+			<div class="col2 text-center text-yellow">
+				<br>
+				<i class="desc-icons icon-asterisk"></i>
+			</div>
+			
+			<div class="col5">
+				<h1>Or start hacking away, beginning with the <a href="grid.html">Grid</a> system</h1>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12 text-center">
+				<small>
+					Developed with freedom in mind by altbdoor<br>
+					Code licensed under <a target="_blank" href="http://opensource.org/licenses/MIT">MIT</a>
+				</small>
+			</div>
+		</div>
+		
+		<script src="../js/yepnope.min.js"></script>
+		<script>
+			yepnope([
+				'../js/jquery.min.js',
+				'../js/pf-plugin.js'
+			]);
+		</script>
+	</body>
+</html>

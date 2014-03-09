@@ -1,0 +1,13 @@
+html {overflow-y:scroll; line-height:1.6}
+body {padding:3em 0 100px; color:#333; background-color:#f8f8f8}
+hr {border:0; border-top:1px solid #ccc}
+
+#attn {
+	background-color:#08c; background-image:url('attn.png');
+	padding:20px 0 50px; text-shadow:0 0 1px #fff; color:#fff;
+	margin-bottom:20px
+}
+#attn > h1 {font-size:5em}
+#attn > p {font-size:1.5em}
+
+.desc-icons {font-size:4em; padding:0 10px}
