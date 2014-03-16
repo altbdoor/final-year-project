@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Grid :: Pixelly Framing Docs</title>
+		
+		<link rel="stylesheet" href="../css/normalize.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/pf-base.css">
+		<link rel="stylesheet" href="../css/pf-grid.css">
+		<link rel="stylesheet" href="docs-style.css">
+		
+		<style>
+			.demo-cols > div {background-color:#ccc; margin-top:1em; margin-bottom:1em; border-radius:2px; transition:background-color 0.5s ease}
+			.demo-cols > div:hover {background-color:#ddd}
+		</style>
+		
+		<script src="../js/prefixfree.min.js"></script>
+	</head>
+	
+	<body class="text-16">
+		<div class="nav nav-black nav-fixed">
+			<div class="clear">
+				<a href="." class="nav-title float-left">Pixelly Framing</a>
+				
+				<ul class="list list-float float-left">
+					<li><a href="index.html">Home</a>
+					<li class="active"><a href="#">Grid</a>
+					<li><a href="base-css.html">Base CSS</a>
+					<li><a href="javascript.html">JavaScript</a>
+					<li><a href="manifesto.html"><i class="icon-plus-sign"></i> Manifesto</a>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="section text-red" style="background-image:url('bg-grid.jpg')">
+			<h1>Grid</h1><br>
+			<p>Two sets of grid to work with for different viewports</p>
+		</div>
+		
+		<div class="row">
+			<div class="col12">
+				Pixelly Framing comes with two different set of grids, where one is suited for smaller viewports, and another suited for larger viewports. This page is currently using the grid system for larger viewports.
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12">
+				<h2>Grid for Larger Viewports</h2>
+				
+				<h3>Demo</h3>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col1">1</div>
+					<div class="col1">2</div>
+					<div class="col1">3</div>
+					<div class="col1">4</div>
+					<div class="col1">5</div>
+					<div class="col1">6</div>
+					<div class="col1">7</div>
+					<div class="col1">8</div>
+					<div class="col1">9</div>
+					<div class="col1">10</div>
+					<div class="col1">11</div>
+					<div class="col1">12</div>
+				</div>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col2">.col2</div>
+					<div class="col10">.col10</div>
+				</div>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col3">.col3</div>
+					<div class="col9">.col9</div>
+				</div>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col4">.col4</div>
+					<div class="col8">.col8</div>
+				</div>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col5">.col5</div>
+					<div class="col7">.col7</div>
+				</div>
+				
+				<div class="demo-cols col12 text-center">
+					<div class="col6">.col6</div>
+					<div class="col6">.col6</div>
+				</div>
+				
+				<p>The grid consists of 12 responsive columns which respond to different screen sizes. The screen sizes in question here are:</p>
+				
+				<ul>
+					<li>From 959 to 768 pixels
+					<li>From 960 to 1199 pixels (Default)
+					<li>From 1200 pixels onwards
+				</ul>
+				
+				<h3>Row and Columns</h3>
+				
+				<div class="col12">
+					<div class="col6">
+						<p>Each row begins with a <code class="code">&lt;div class="row"&gt;</code>, followed by <code class="code">&lt;div class="col<b>n</b>"&gt;</code>, where <code class="code"><b>n</b></code> is replaced with the desired column size.</p>
+						
+						<p>With some unique CSS selectors, nesting the columns is very easy, without the need to create a new row. Just declare a column of smaller size within a larger column. However, this feature has its drawbacks.</p>
+						
+						<p>In addition to some elements misbehaving (e.g., <code class="code">&lt;hr&gt;</code>), continuously nesting the columns may result in a very unsightly code. If desired, rows can be created after every 12 columns to help code readability and cleanliness.</p>
+					</div>
+					
+					<div class="col6">
+						<p>
+<pre class="code">&lt;div class="row"&gt;
+	&lt;div class="col4"&gt;&lt;div&gt;
+	&lt;div class="col4"&gt;&lt;div&gt;
+	&lt;div class="col4"&gt;&lt;div&gt;
+&lt;div&gt;
+
+&lt;div class="row"&gt;
+	&lt;div class="col12"&gt;
+		&lt;div class="col6"&gt;
+			&lt;div class="col4"&gt;&lt;div&gt;	
+			&lt;div class="col2"&gt;&lt;div&gt;	
+		&lt;div&gt;
+		&lt;div class="col6"&gt;&lt;div&gt;	
+	&lt;div&gt;
+&lt;div&gt;
+</pre>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12">
+				<hr>
+				<h2>Grid for Smaller Viewports</h2>
+				
+				<p>What about screens below 768 pixels? For that, we have a different grid system. Due to the contrasting nature of the grid system, it is documented in a different page.</p>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col12 text-center">
+				<hr>
+				<small>
+					Developed with freedom in mind by altbdoor<br>
+					Code licensed under <a target="_blank" href="http://opensource.org/licenses/MIT">MIT</a>
+				</small>
+			</div>
+		</div>
+		
+		<script src="../js/yepnope.min.js"></script>
+		<script>
+			yepnope([
+				'../js/jquery.min.js',
+				'../js/pf-plugin.js'
+			]);
+		</script>
+	</body>
+</html>

@@ -187,5 +187,67 @@
 	
 	$('.modal-trigger').modal();
 	
+	/* form verify
+	==================================================*/
+	$.fn.formVerify = function (callback) {
+		$(this).on('submit', function (e) {
+			var input = $(this).find('input[type=text], input[type=password], textarea, select'),
+				regex,
+				failed = [];
+			
+			$(input).each(function () {
+				var temp = {
+						target: this,
+						fault: []
+					},
+					val = $(this).val();
+				
+				if (typeof($(this).data('verify-regex')) !== 'undefined') {
+					regex = new RegExp($(this).data('verify-regex'));
+					
+					if (!regex.test(val)) {
+						temp.fault.push('regex');
+					}
+				}
+				
+				if (typeof($(this).data('verify-dataset')) !== 'undefined') {
+					var dataset = $(this).data('verify-dataset').split(',');
+					
+					$(dataset).each(function (index, item) {
+						item = $.trim(item);
+					});
+					
+					if ($.inArray(val, dataset) === -1) {
+						temp.fault.push('dataset');
+					}
+				}
+				
+				if (typeof($(this).data('verify-required')) !== 'undefined') {
+					if ($.trim(val) === '') {
+						temp.fault.push('required');
+					}
+				}
+				
+				if (typeof($(this).data('verify-length')) !== 'undefined') {
+					var length = $(this).data('verify-length').split(',');
+					
+					$(length).each(function (index, item) {
+						item = $.trim(item);
+					});
+					
+					if (val.length < length[0] || val.length > length[1]) {
+						temp.fault.push('length')
+					}
+				}
+				
+				if (temp.fault.length > 0) {
+					failed.push(temp);
+				}
+			});
+			
+			callback(e, (failed.length == 0), failed);
+		});
+	};
+	
 	
 })(jQuery);

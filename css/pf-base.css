@@ -65,11 +65,11 @@
 	padding:0.25em; color:#000; vertical-align:middle;
 	
 	border-radius:2px;
-	background-clip: padding-box;
+	background-clip:padding-box;
 	
 	box-shadow:0 0 2px rgba(0,0,0,0.3) inset;
 	
-	box-sizing:border-box;
+	box-sizing:border-box
 }
 .input.input-small {font-size:0.857em}
 .input.input-large {font-size:1.5em}
@@ -212,8 +212,9 @@
 ==================================================*/
 .code {
 	border:1px solid #ccc; background-color:#f8f8f8; color:#c25; margin:0 0.1em; padding:0 0.3em;
-	border-radius:2px; background-clip: padding-box;
+	border-radius:2px; background-clip:padding-box;
 }
+code.code {white-space:nowrap}
 
 /* table
 ==================================================*/
@@ -293,7 +294,14 @@
 .modal .modal-body {padding:1em; border-width:1px 0; border-style:solid; border-color:#cecece}
 .modal .modal-footer {text-align:right; padding:0.5em 1em}
 
+/* fit to size
+==================================================*/
+@media (min-width: 1200px) {
+	.nav.nav-fixed {min-width:1200px}
+}
 
-
+@media (max-width: 959px) {
+	.nav.nav-fixed {min-width:768px}
+}
 
 

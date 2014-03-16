@@ -8,10 +8,10 @@
 	
 		<title>Test Ground</title>
 		
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/pf-base.css">
 		
-		<link rel="stylesheet" href="psGridSystem.css">
+		<link rel="stylesheet" href="css/pf-grid.css">
 		
 		<style>
 			body {font-family:arial}
@@ -26,7 +26,7 @@
 			*/
 		</style>
 		
-		<script src="prefixfree.js"></script>
+		<script src="js/prefixfree.min.js"></script>
 	</head>
 	
 	<body class="text-black text-14">
@@ -84,7 +84,7 @@
 					<div></div>
 				</a>
 				
-				<a href="#" class="title float-left">Pixelly Framing</a>
+				<a href="#" class="nav-title float-left">Pixelly Framing</a>
 				<ul class="list list-float float-left">
 					<li class="active"><a href="#">ads</a></li>
 					<li class="dropdown dropdown-open" data-dropdown-animation="fade">
@@ -98,8 +98,8 @@
 					<li><a href="#">ads</a></li>
 				</ul>
 				
-				<form class="nav-form float-right">
-					<input class="input" type="text">
+				<form id="desk" class="nav-form float-right form-verify">
+					<input class="input" type="text" data-verify-regex="lov(e|3)">
 					<select class="input">
 						<option>asd
 					</select>
@@ -120,7 +120,7 @@
 					<div></div>
 				</a>
 				
-				<a href="#" class="title float-left">Pixelly Framing</a>
+				<a href="#" class="nav-title float-left">Pixelly Framing</a>
 				<ul class="list list-float float-right">
 					<li class="active"><a href="#">ads</a></li>
 					<li class="dropdown" data-dropdown-trigger="hover">
@@ -215,12 +215,18 @@
 		</div>
 		<br>
 		asd
-		<script src="js/jquery.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script>
 			var pxSetup = {
 				navMenuAnimation: 'fade'
 			};
 		</script>
-		<script src="js/plugin.js"></script>
+		<script src="js/pf-plugin.js"></script>
+		<script>
+			$('#desk').formVerify(function (e, success, failed) {
+				e.preventDefault();
+				console.log(failed);
+			});
+		</script>
 	</body>
 </html>
