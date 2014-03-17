@@ -12,11 +12,6 @@
 		<link rel="stylesheet" href="../css/pf-grid.css">
 		<link rel="stylesheet" href="docs-style.css">
 		
-		<style>
-			.demo-cols > div {background-color:#ccc; margin-top:1em; margin-bottom:1em; border-radius:2px; transition:background-color 0.5s ease}
-			.demo-cols > div:hover {background-color:#ddd}
-		</style>
-		
 		<script src="../js/prefixfree.min.js"></script>
 	</head>
 	
@@ -27,7 +22,13 @@
 				
 				<ul class="list list-float float-left">
 					<li><a href="index.html">Home</a>
-					<li class="active"><a href="#">Grid</a>
+					<li class="active dropdown">
+						<a href="#">Grid</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Larger Viewport</a>
+							<li><a href="grid-mobile.html">Smaller Viewport</a>
+						</ul>
+					</li>
 					<li><a href="base-css.html">Base CSS</a>
 					<li><a href="javascript.html">JavaScript</a>
 					<li><a href="manifesto.html"><i class="icon-plus-sign"></i> Manifesto</a>
@@ -112,7 +113,7 @@
 					</div>
 					
 					<div class="col6">
-						<p>
+						<div style="margin:1em 0">
 <pre class="code">&lt;div class="row"&gt;
 	&lt;div class="col4"&gt;&lt;div&gt;
 	&lt;div class="col4"&gt;&lt;div&gt;
@@ -129,7 +130,7 @@
 	&lt;div&gt;
 &lt;div&gt;
 </pre>
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -140,7 +141,9 @@
 				<hr>
 				<h2>Grid for Smaller Viewports</h2>
 				
-				<p>What about screens below 768 pixels? For that, we have a different grid system. Due to the contrasting nature of the grid system, it is documented in a different page.</p>
+				<p>What about screens below 768 pixels? For that, we have a different grid system. Due to the differing nature of the grid system, it is documented in a <a href="grid-mobile.html">different page</a>.</p>
+				
+				<p class="text-right"><a href="grid-mobile.html" class="btn btn-red text-large">Grid for Smaller Viewports</a></p>
 			</div>
 		</div>
 		

@@ -1,7 +1,13 @@
+/* basic rules */
 html {overflow-y:scroll; line-height:1.6}
 body {padding:3em 0 100px; color:#333; background-color:#f8f8f8}
 hr {border:0; border-top:1px solid #ccc}
 
+/* page section */
+.section {text-align:center; padding:20px; background-position:center; margin-bottom:1em; text-shadow:1px 1px 1px #fff}
+.section > h1, .section > p {display:inline-block; background-image:url('bg-white.png'); padding:0.25em 1em}
+
+/* index */
 #attn {
 	background-color:#08c; background-image:url('bg-index.png'); background-position:center;
 	padding:20px 0 50px; text-shadow:0 0 1px #fff, 0 0 5px #000;
@@ -10,7 +16,14 @@ hr {border:0; border-top:1px solid #ccc}
 #attn > h1 {font-size:5em}
 #attn > p {font-size:1.5em}
 
-.section {text-align:center; padding:20px; background-position:center; margin-bottom:1em; text-shadow:1px 1px 1px #fff}
-.section > h1, .section > p {display:inline-block; background-image:url('bg-white.png'); padding:0.25em 1em}
-
 .desc-icons {font-size:4em; padding:0 10px}
+
+/* grid */
+.demo-cols > div {background-color:#ccc; margin-top:1em; margin-bottom:1em; border-radius:2px; transition:background-color 0.5s ease}
+.demo-cols > div:hover {background-color:#ddd}
+
+/* grid-mobile */
+.pad {padding-left:20px; padding-right:20px}
+#demo .box {border:0; margin:0.5em 0}
+
+/* base css */

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Grid :: Pixelly Framing Docs</title>
+		
+		<link rel="stylesheet" href="../css/normalize.min.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/pf-base.css">
+		<link rel="stylesheet" href="../css/pf-grid-mobile.css">
+		<link rel="stylesheet" href="docs-style.css">
+		
+		<script src="../js/prefixfree.min.js"></script>
+	</head>
+	
+	<body class="text-16">
+		<div class="nav nav-white nav-fixed">
+			<div class="clear">
+				<a href="#" class="nav-trigger float-left" data-nav-menu-animation="slide">
+					<div></div>
+					<div></div>
+					<div></div>
+				</a>
+				
+				<a href="." class="nav-title float-left">Pixelly Framing</a>
+			</div>
+			
+			<div class="nav-menu">
+				<ul class="list">
+					<li><a href="index.html">Home</a>
+					<li><a href="grid.html">Grid</a>
+					<li><a href="base-css.html">Base CSS</a>
+					<li><a href="javascript.html">JavaScript</a>
+					<li><a href="manifesto.html">Manifesto</a>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="section text-red" style="background-image:url('bg-grid-mobile.jpg')">
+			<h1>Grid Mobile</h1><br>
+			<p>Two sets of grid to work with for different viewports</p>
+		</div>
+		
+		<div class="row">
+			<div class="col100">
+				<div class="pad">
+					<p>Pixelly Framing also has a grid system for smaller viewports, but the syntax is a little different than larger viewports.</p>
+					
+					<h2>Grid for Smaller Viewports</h2>
+					
+					<h3>Demo</h3>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="demo" class="col100 text-center text-white">
+				<div class="col100 box box-red">.col100</div>
+				
+				<div class="col50 box box-yellow">.col50</div>
+				<div class="col50 box box-green">.col50</div>
+				
+				<div class="col33 box box-blue">.col33</div>
+				<div class="col33 box box-purple">.col33</div>
+				<div class="col33 box box-black">.col33</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col100">
+				<div class="pad">
+					<p>The grid consists of blocks with percentage based fluid width, which automatically adapts to the screen size. The sizes available are:</p>
+					
+					<ul>
+						<li><code class="code">.col100</code> for 100% width
+						<li><code class="code">.col75</code> for 75% width
+						<li><code class="code">.col66</code> for 66.66% width
+						<li><code class="code">.col50</code> for 50% width
+						<li><code class="code">.col33</code> for 33.33% width
+						<li><code class="code">.col25</code> for 25% width
+					</ul>
+					
+					<p>All the blocks can be combined and nested freely to obtain the desired outlook. For example, <code class="code">.col75</code> and <code class="code">.col25</code> would make a 3/4 and 1/4 blocks.</p>
+					
+					<p>With some unique CSS selectors, the most difficult block arrangement, which is 1/3 block, is made possible. Logically, three <code class="code">.col33</code>, or <code class="code">.col66</code> and <code class="code">.col33</code> would add up to 99.99% width. However, that has been handled in Pixelly Framing, allowing widths of 100% in all types of arrangement.</p>
+				</div>
+				
+				<div class="pad">
+<pre class="code">&lt;div class="row"&gt;
+	&lt;div class="col33"&gt;&lt;div&gt;
+	&lt;div class="col33"&gt;&lt;div&gt;
+	&lt;div class="col33"&gt;&lt;div&gt;
+&lt;div&gt;
+
+&lt;div class="row"&gt;
+	&lt;div class="col100"&gt;
+		&lt;div class="col50"&gt;
+			&lt;div class="col66"&gt;&lt;div&gt;	
+			&lt;div class="col33"&gt;&lt;div&gt;	
+		&lt;div&gt;
+		&lt;div class="col50"&gt;&lt;div&gt;	
+	&lt;div&gt;
+&lt;div&gt;
+</pre>
+				</div>
+			
+				<div class="pad">
+					<p>Bear in mind though, that nesting the blocks would usually require calculation. Since the blocks are made to fill the space available, it is advised to start a new div within the blocks to add custom padding or margins.</p>
+					
+					<hr>
+					<h2>Grid for Larger Viewports</h2>
+					
+					<p>What about larger screens? For that, we have a different grid system. Due to the differing nature of the grid system, it is documented in a <a href="grid.html">different page</a>.</p>
+					
+					<p class="text-right"><a href="grid.html" class="btn btn-red text-large">Grid for Larger Viewports</a></p>
+				</div>
+				
+				<div class="pad text-center">
+					<hr>
+					<small>
+						Developed with freedom in mind by altbdoor<br>
+						Code licensed under <a target="_blank" href="http://opensource.org/licenses/MIT">MIT</a>
+					</small>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/yepnope.min.js"></script>
+		<script>
+			yepnope([
+				'../js/jquery.min.js',
+				'../js/pf-plugin.js'
+			]);
+		</script>
+	</body>
+</html>

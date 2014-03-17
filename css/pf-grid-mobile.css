@@ -11,7 +11,7 @@ body {width:100%}
 .row:after {clear:both}
 
 .col100, .col66, .col75, .col50, .col33, .col25 {
-	display:inline; float:left; position:relative;
+	display:inline; float:left; position:relative; min-height:1px
 }
 
            .col100 {width: 100.00%}

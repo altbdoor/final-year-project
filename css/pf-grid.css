@@ -16,8 +16,6 @@ body {min-width:960px}
 	display:inline; float:left; position:relative
 }
 
-
-
  .col1 {width:  60px}
  .col2 {width: 140px}
  .col3 {width: 220px}
@@ -49,6 +47,8 @@ body {min-width:960px}
 	.col10 {width: 980px}
 	.col11 {width:1080px}
 	.col12 {width:1180px}
+	
+	.nav.nav-fixed {min-width:1200px}
 }
 
 /* small desktop or tablet ( 959 and below )
@@ -69,4 +69,6 @@ body {min-width:960px}
 	.col10 {width: 620px}
 	.col11 {width: 684px}
 	.col12 {width: 748px}
+	
+	.nav.nav-fixed {min-width:768px}
 }

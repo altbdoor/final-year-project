@@ -12,6 +12,12 @@
 		<link rel="stylesheet" href="../css/pf-grid.css">
 		<link rel="stylesheet" href="docs-style.css">
 		
+		<style>
+			h2 {margin-top:0; padding-top:50px; border-bottom:3px solid #333}
+			h3 {padding-left:1em; border-left:0.5em solid #333; margin-top:2em}
+			ul > .gap {list-style:none; height:1em}
+		</style>
+		
 		<script src="../js/prefixfree.min.js"></script>
 	</head>
 	
@@ -22,7 +28,13 @@
 				
 				<ul class="list list-float float-left">
 					<li><a href="index.html">Home</a>
-					<li><a href="grid.html">Grid</a>
+					<li class="dropdown">
+						<a href="#">Grid</a>
+						<ul class="dropdown-menu">
+							<li><a href="grid.html">Larger Viewport</a>
+							<li><a href="grid-mobile.html">Smaller Viewport</a>
+						</ul>
+					</li>
 					<li class="active"><a href="#">Base CSS</a>
 					<li><a href="javascript.html">JavaScript</a>
 					<li><a href="manifesto.html"><i class="icon-plus-sign"></i> Manifesto</a>
@@ -36,7 +48,141 @@
 		</div>
 		
 		<div class="row">
+			<div class="col12">
+				Pixelly Framing comes with a large set of modular CSS rules, which can be used interchangeably between different elements. In addition, a small number of custom styles are made ready, where opting out is an option.
+			</div>
+		</div>
+		
+		<div class="row">
 			
+			
+			<div class="col4">
+				<ul style="padding-top:50px; margin-top:0">
+					<li><a href="#helpers">Helpers</a>
+					<li><a href="#retro">Retro</a>
+					<li><a href="#"></a>
+					<li><a href="#"></a>
+					<li><a href="#"></a>
+				</ul>
+			</div>
+			
+			<div class="col8">
+				<h2 id="helpers">Helpers</h2>
+				
+				<p>A large number of helper CSS rules are provided. Ranging from the basic ones like <code class="code">text-center</code>, to complex ones like <code class="code">list</code>.</p>
+				
+				<h3>Text Manipulation</h3>
+				
+				<ul>
+					<li><code class="code">.text-16</code> for <code class="code">font-size: 16px</code> (<span class="text-16">Example</span>)
+					<li><code class="code">.text-14</code> for <code class="code">font-size: 14px</code> (<span class="text-14">Example</span>)
+					<li class="gap">
+					<li><code class="code">.text-large</code> for <code class="code">font-size: 1.5em</code> (<span class="text-large">Example</span>)
+					<li><code class="code">.text-small</code> for <code class="code">font-size: 0.857em</code> (<span class="text-small">Example</span>)
+					<li class="gap">
+					<li><code class="code">.text-center</code> for <code class="code">text-align: center</code>
+					<li><code class="code">.text-right</code> for <code class="code">text-align: right</code>
+					<li><code class="code">.text-left</code> for <code class="code">text-align: left</code>
+					<li class="gap">
+					<li><code class="code">.text-white</code> for <code class="code">color: #fff</code> (<span class="text-white box box-black">Example</span>)
+					<li><code class="code">.text-black</code> for <code class="code">color: #000</code> (<span class="text-black">Example</span>)
+					<li><code class="code">.text-red</code> for <code class="code">color: #d32</code> (<span class="text-red">Example</span>)
+					<li><code class="code">.text-yellow</code> for <code class="code">color: #f80</code> (<span class="text-yellow">Example</span>)
+					<li><code class="code">.text-green</code> for <code class="code">color: #094</code> (<span class="text-green">Example</span>)
+					<li><code class="code">.text-blue</code> for <code class="code">color: #06c</code> (<span class="text-blue">Example</span>)
+					<li><code class="code">.text-purple</code> for <code class="code">color: #a08</code> (<span class="text-purple">Example</span>)
+				</ul>
+				
+				<h3>Floating and Clearing</h3>
+				
+				<ul>
+					<li><code class="code">.float-left</code> for <code class="code">float: left</code>
+					<li><code class="code">.float-right</code> for <code class="code">float: right</code>
+					<li class="gap">
+					<li><code class="code">.clear</code> for clearing floating elements within the element
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue clear text-center" style="padding:10px">
+						<p><code class="code">div.clear</code></p>
+						
+						<div class="box box-red float-left" style="padding:5px 10px"><code class="code">div.float-left</code></div>
+						<div class="box box-green float-right" style="padding:5px 10px"><code class="code">div.float-right</code></div>
+					</div>
+				</p>
+				
+				<h3>Lists</h3>
+				
+				<ul>
+					<li><code class="code">.list</code> for a <code class="code">ul</code> element with <code class="code">list-style: none</code>, <code class="code">padding: 0</code> and <code class="code">margin: 0</code>
+					<li class="gap">
+					<li><code class="code">.list-inline</code> for the <code class="code">li</code> children of <code class="code">.list</code> to <code class="code">display: inline-block</code>
+					<li><code class="code">.list-float</code> for the <code class="code">li</code> children of <code class="code">.list</code> to <code class="code">float: left</code>
+				</ul>
+				
+				<p>
+					Example:
+					
+					<table class="table table-border table-fill">
+						<tr>
+							<td style="width:25%">
+								<p>Normal <code class="code">ul</code></p>
+								
+								<ul>
+									<li>One
+									<li>Two
+									<li>Three
+								</ul>
+							</td>
+							<td style="width:25%">
+								<p><code class="code">ul</code> with <code class="code">.list</code></p>
+								
+								<ul class="list">
+									<li>One
+									<li>Two
+									<li>Three
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:25%">
+								<p><code class="code">ul</code> with <code class="code">.list</code> and <code class="code">.list-inline</code></p>
+								
+								<ul class="list list-inline">
+									<li>One
+									<li>Two
+									<li>Three
+								</ul>
+							</td>
+							<td style="width:25%">
+								<p><code class="code">ul</code> with <code class="code">.list</code> and <code class="code">.list-float</code></p>
+								
+								<ul class="list list-float">
+									<li>One
+									<li>Two
+									<li>Three
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</p>
+				
+				<h2 id="retro">Retro</h2>
+				
+				<p>With the advent</p>
+				
+				<!--
+				<ul>
+					<li><code class="code">.</code> for <code class="code"></code>
+					<li><code class="code">.</code> for <code class="code"></code>
+					<li><code class="code">.</code> for <code class="code"></code>
+					<li><code class="code">.</code> for <code class="code"></code>
+					<li><code class="code">.</code> for <code class="code"></code>
+				</ul>
+				-->
+			</div>
 		</div>
 		
 		<div class="row">
