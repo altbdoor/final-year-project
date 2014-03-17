@@ -14,7 +14,8 @@
 		
 		<style>
 			h2 {margin-top:0; padding-top:50px; border-bottom:3px solid #333}
-			h3 {padding-left:1em; border-left:0.5em solid #333; margin-top:2em}
+			h3 {margin-top:0; padding-top:50px; padding-left:1em; border-bottom:2px solid #666}
+			h3:before {content:"+ "}
 			ul > .gap {list-style:none; height:1em}
 		</style>
 		
@@ -49,29 +50,39 @@
 		
 		<div class="row">
 			<div class="col12">
-				Pixelly Framing comes with a large set of modular CSS rules, which can be used interchangeably between different elements. In addition, a small number of custom styles are made ready, where opting out is an option.
+				Pixelly Framing comes with a large set of modular CSS rules, which can be used interchangeably between different elements. In addition, a small number of custom styles are made ready, where opting out is an option. It is highly encouraged to use the developer tools bundled with the browser to inspect how the CSS classes work.
 			</div>
 		</div>
 		
 		<div class="row">
-			
-			
-			<div class="col4">
-				<ul style="padding-top:50px; margin-top:0">
-					<li><a href="#helpers">Helpers</a>
-					<li><a href="#retro">Retro</a>
-					<li><a href="#"></a>
-					<li><a href="#"></a>
-					<li><a href="#"></a>
-				</ul>
+			<div class="col3">
+				<div style="padding-top:50px">
+					<select id="base-css-nav" class="input input-large input-block">
+						<option value="helpers">Helpers
+						<option value="text-manip">-- Text Manipulation
+						<option value="float-and-clear">-- Floating and Clearing
+						<option value="list">-- Lists
+						<option value="retro">Retro
+						<option value="buttons">Buttons
+						<option value="button-colors">-- Button Colors and Sizes
+						<option value="button-group">-- Button Grouping
+						<option value="input">Input
+						<option value="boxes">Boxes
+						<option value="nav">Navigation Bar
+						<option value="table">Table
+						<option value="progress">Progress Bar
+						<option value="dropdown">Dropdown
+						<option value="modal">Modal Box
+					</select>
+				</div>
 			</div>
 			
-			<div class="col8">
+			<div class="col9">
 				<h2 id="helpers">Helpers</h2>
 				
-				<p>A large number of helper CSS rules are provided. Ranging from the basic ones like <code class="code">text-center</code>, to complex ones like <code class="code">list</code>.</p>
+				<p>A large number of helper CSS rules are provided. Ranging from the basic ones like <code class="code">.text-center</code>, to complex ones like <code class="code">.list</code>.</p>
 				
-				<h3>Text Manipulation</h3>
+				<h3 id="text-manip">Text Manipulation</h3>
 				
 				<ul>
 					<li><code class="code">.text-16</code> for <code class="code">font-size: 16px</code> (<span class="text-16">Example</span>)
@@ -91,9 +102,11 @@
 					<li><code class="code">.text-green</code> for <code class="code">color: #094</code> (<span class="text-green">Example</span>)
 					<li><code class="code">.text-blue</code> for <code class="code">color: #06c</code> (<span class="text-blue">Example</span>)
 					<li><code class="code">.text-purple</code> for <code class="code">color: #a08</code> (<span class="text-purple">Example</span>)
+					<li class="gap">
+					<li><code class="code">.code</code> for code styled text (<code class="code">Example</code>)
 				</ul>
 				
-				<h3>Floating and Clearing</h3>
+				<h3 id="float-and-clear">Floating and Clearing</h3>
 				
 				<ul>
 					<li><code class="code">.float-left</code> for <code class="code">float: left</code>
@@ -111,9 +124,15 @@
 						<div class="box box-red float-left" style="padding:5px 10px"><code class="code">div.float-left</code></div>
 						<div class="box box-green float-right" style="padding:5px 10px"><code class="code">div.float-right</code></div>
 					</div>
+					<br>
+<pre class="code">&lt;div class="clear"&gt;
+	&lt;div class="float-left"&gt;&lt;/div&gt;
+	&lt;div class="float-right"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
 				</p>
 				
-				<h3>Lists</h3>
+				<h3 id="list">Lists</h3>
 				
 				<ul>
 					<li><code class="code">.list</code> for a <code class="code">ul</code> element with <code class="code">list-style: none</code>, <code class="code">padding: 0</code> and <code class="code">margin: 0</code>
@@ -127,17 +146,8 @@
 					
 					<table class="table table-border table-fill">
 						<tr>
-							<td style="width:25%">
-								<p>Normal <code class="code">ul</code></p>
-								
-								<ul>
-									<li>One
-									<li>Two
-									<li>Three
-								</ul>
-							</td>
-							<td style="width:25%">
-								<p><code class="code">ul</code> with <code class="code">.list</code></p>
+							<td style="width:33.34%">
+								<p><code class="code">.list</code></p>
 								
 								<ul class="list">
 									<li>One
@@ -145,10 +155,9 @@
 									<li>Three
 								</ul>
 							</td>
-						</tr>
-						<tr>
-							<td style="width:25%">
-								<p><code class="code">ul</code> with <code class="code">.list</code> and <code class="code">.list-inline</code></p>
+						
+							<td style="width:33.33%">
+								<p><code class="code">.list</code> with <code class="code">.list-inline</code></p>
 								
 								<ul class="list list-inline">
 									<li>One
@@ -156,8 +165,8 @@
 									<li>Three
 								</ul>
 							</td>
-							<td style="width:25%">
-								<p><code class="code">ul</code> with <code class="code">.list</code> and <code class="code">.list-float</code></p>
+							<td style="width:33.33%">
+								<p><code class="code">.list</code> with <code class="code">.list-float</code></p>
 								
 								<ul class="list list-float">
 									<li>One
@@ -167,13 +176,318 @@
 							</td>
 						</tr>
 					</table>
+					
+					<br>
+<pre class="code">&lt;ul class="list"&gt;
+	&lt;li&gt;One&lt;/li&gt;
+	&lt;li&gt;Two&lt;/li&gt;
+	&lt;li&gt;Three&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="list list-inline"&gt;
+	...
+&lt;/ul&gt;
+
+&lt;ul class="list list-float"&gt;
+	...
+&lt;/ul&gt;
+</pre>
 				</p>
 				
 				<h2 id="retro">Retro</h2>
 				
-				<p>With the advent</p>
+				<p>Nowadays, flat and matte user interfaces are all the rage. Pixelly Framing defaults to a gradient and glossy user interface. Instead of hardcoding these styles, Pixelly Framing adapts a matte user interface by detecting classes in the <code class="code">body</code> element.</p>
+				
+				<ul>
+					<li><code class="code">.retro-gradient</code> to remove background gradients
+					<li><code class="code">.retro-radius</code> to remove curves around boxes 
+					<li><code class="code">.retro-shadow</code> to remove background shadows 
+				</ul>
+				
+				<p>
+					Example: Press each button and see the effects on the style.
+					
+					<div class="btn-group btn-group-horiz" style="display:block">
+						<button class="btn" onclick="$('body').toggleClass('retro-gradient')">Retro Gradient</button>
+						<button class="btn" onclick="$('body').toggleClass('retro-radius')">Retro Radius</button>
+						<button class="btn" onclick="$('body').toggleClass('retro-shadow')">Retro Shadow</button>
+						<button class="btn btn-blue" onclick="$('body').removeClass('retro-gradient retro-radius retro-shadow')">Remove All</button>
+						<button class="btn btn-blue" onclick="$('body').addClass('retro-gradient retro-radius retro-shadow')">Apply All</button>
+					</div>
+					
+					<br>
+<pre class="code">&lt;body class="retro-gradient retro-radius retro-shadow"&gt;</pre>
+				</p>
+				
+				<h2 id="buttons">Buttons</h2>
+				
+				<p>Buttons play a large part in form interaction. In Pixelly Framing, buttons come in a variety of colors. Simply add <code class="code">.btn</code> and the desired button color to get a styled button. In addition to helper classes for button sizes, buttons can also be grouped together with <code class="code">.btn-group</code>, vertically or horizontally.</p>
+				
+				<h3 id="button-colors">Button Colors and Sizes</h3>
+				
+				<ul>
+					<li><code class="code">.btn</code> for <button class="btn">Default Button</button>
+					<li><code class="code">.btn-black</code> for <button class="btn btn-black">Black Button</button>
+					<li><code class="code">.btn-red</code> for <button class="btn btn-red">Red Button</button>
+					<li><code class="code">.btn-yellow</code> for <button class="btn btn-yellow">Yellow Button</button>
+					<li><code class="code">.btn-green</code> for <button class="btn btn-green">Green Button</button>
+					<li><code class="code">.btn-blue</code> for <button class="btn btn-blue">Blue Button</button>
+					<li><code class="code">.btn-purple</code> for <button class="btn btn-purple">Purple Button</button>
+					<li class="gap">
+					<li><code class="code">.btn-small</code> for a smaller button
+					<li><code class="code">.btn-large</code> for a larger button
+					<li><code class="code">.btn-block</code> for a button with <code class="code">display: block</code>
+				</ul>
+				
+				<p>
+					Example:
+					
+					<table class="table table-border table-fill">
+						<tr>
+							<td style="width:33.34%">
+								<p><code class="code">.btn</code> with <code class="code">.btn-small</code></p>
+								<button class="btn btn-small">btn-small</button>
+							</td>
+							
+							<td style="width:33.33%">
+								<p><code class="code">.btn</code> with <code class="code">.btn-large</code></p>
+								<button class="btn btn-large">btn-large</button>
+							</td>
+							
+							<td style="width:33.33%">
+								<p><code class="code">.btn</code> with <code class="code">.btn-block</code></p>
+								<button class="btn btn-block">btn-block</button>
+							</td>
+						</tr>
+					</table>
+					
+					<br>
+<pre class="code">&lt;button class="btn btn-small"&gt;&lt;/button&gt;
+&lt;button class="btn btn-large"&gt;&lt;/button&gt;
+&lt;button class="btn btn-block"&gt;&lt;/button&gt;
+</pre>
+				</p>
+				
+				<h3 id="button-group">Button Grouping</h3>
+				
+				<ul>
+					<li><code class="code">.btn-group</code> to initiate button grouping
+					<li><code class="code">.btn-group-horiz</code> groups the buttons horizontally
+					<li><code class="code">.btn-group-vert</code> groups the buttons vertically
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue" style="padding:10px">
+						<div class="btn-group btn-group-horiz">
+							<button class="btn btn-red">Button 1</button>
+							<button class="btn">Button 2</button>
+							<button class="btn">Button 3</button>
+						</div>
+						
+						<div class="btn-group btn-group-vert">
+							<button class="btn btn-red">Button 1</button>
+							<button class="btn">Button 2</button>
+							<button class="btn">Button 3</button>
+						</div>
+					</div>
+					
+					<br>
+<pre class="code">&lt;div class="btn-group btn-group-horiz"&gt;
+	&lt;button class="btn btn-red"&gt;Button 1&lt;/button&gt;
+	&lt;button class="btn"&gt;Button 2&lt;/button&gt;
+	&lt;button class="btn"&gt;Button 3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="btn-group btn-group-vert"&gt;
+	...
+&lt;/div&gt;
+</pre>
+				</p>
+				
+				<h2 id="input">Input</h2>
+				
+				<p>Other than buttons, forms would not be complete without input elements. Pixelly Framing styles input fields minimally, leaving most of the default styles intact. To note, the <code class="code">select</code> element has an unstandardized behavior, which results in it being a few pixels larger than other input counterparts.</p>
+				
+				<p>To use Pixelly Framing's input style, simply add the <code class="code">.input</code> class to the element. Like <code class="code">.btn</code>, inputs also have helper classes for its sizes. Radio and checboxes can also be paired with buttons to provide an interesting style.</p>
+				
+				<ul>
+					<li><code class="code">.input</code> for a default input, for <code class="code">input[type=text]</code>, <code class="code">input[type=password]</code>, <code class="code">select</code> and <code class="code">textarea</code>
+					<li class="gap">
+					<li><code class="code">.input-small</code> for a smaller input
+					<li><code class="code">.input-large</code> for a larger input
+					<li><code class="code">.input-block</code> for a input with <code class="code">display: block</code>
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue" style="padding:10px">
+						<div>
+							<input type="text" class="input" value="input type=text">
+							<input type="password" class="input" value="input type=password">
+							<input type="text" class="input" value="input disabled" disabled>
+							<select class="input">
+								<option>option 1
+								<option>option 1
+								<option>option 3
+							</select>
+							<textarea class="input">textarea</textarea>
+							<br><br>
+							<label class="btn btn-green"><input type="checkbox"> Checkbox</label>
+							<label class="btn btn-red"><input type="radio"> Radio</label>
+						</div>
+					</div>
+					<br>
+					<table class="table table-border table-fill">
+						<tr>
+							<td style="width:33.34%">
+								<p><code class="code">.input</code> with <code class="code">.input-small</code></p>
+								<input type="text" class="input input-small" value="input-small">
+							</td>
+							
+							<td style="width:33.33%">
+								<p><code class="code">.input</code> with <code class="code">.input-large</code></p>
+								<input type="text" class="input input-large" value="input-large">
+							</td>
+							
+							<td style="width:33.33%">
+								<p><code class="code">.input</code> with <code class="code">.input-block</code></p>
+								<input type="text" class="input input-block" value="input-block">
+							</td>
+						</tr>
+					</table>
+					
+					<br>
+<pre class="code">&lt;input type="text" class="input"&gt;
+
+&lt;input type="password" class="input"&gt;
+
+&lt;input type="text" class="input" disabled&gt;
+
+&lt;select class="input"&gt;
+	&lt;option&gt;option 1
+	...
+&lt;/select&gt;
+
+&lt;textarea class="input"&gt;&lt;/textarea&gt;
+
+&lt;label class="btn btn-green"&gt;&lt;input type="checkbox"&gt; Checkbox&lt;/label&gt;
+&lt;label class="btn btn-red"&gt;&lt;input type="radio"&gt; Radio&lt;/label&gt;
+
+&lt;input type="text" class="input input-small"&gt;
+&lt;input type="text" class="input input-large"&gt;
+&lt;input type="text" class="input input-block"&gt;
+</pre>
+				</p>
+				
+				<h2 id="boxes">Boxes</h2>
+				
+				<p>Using the similar color scheme to the buttons, the <code class="code">.box</code> class can be used to make colored boxes for different purposes.</p>
+				
+				<ul>
+					<li><div class="box text-black"><code class="code">.box</code> for Default Box</div>
+					<li><div class="box box-black text-white"><code class="code">.box-black</code> for Black Box</div>
+					<li><div class="box box-red text-white"><code class="code">.box-red</code> for Red Box</div>
+					<li><div class="box box-yellow text-white"><code class="code">.box-yellow</code> for Yellow Box</div>
+					<li><div class="box box-green text-white"><code class="code">.box-green</code> for Green Box</div>
+					<li><div class="box box-blue text-white"><code class="code">.box-blue</code> for Blue Box</div>
+					<li><div class="box box-purple text-white"><code class="code">.box-purple</code> for Purple Box</div>
+				</ul>
+				
+				<p>
+					Example:
+					
+					<br>
+<pre class="code">&lt;div class="box box-red"&gt;&lt;/div&gt;</pre>
+				</p>
+				
+				<h2 id="nav">Navigation Bar</h2>
+				
+				<p>Pixelly Framing comes with two navigation bars, which are colored black or white. As you can probably see, the navigation bar on top of the page is black. Navigation bars are identified with the <code class="code">.nav</code> class. Additional helper classes include:</p>
+				
+				<h3>Basic Navigation Bar</h3>
+				
+				<ul>
+					<li><code class="code">.nav-black</code> for black navigation bar
+					<li><code class="code">.nav-white</code> for white navigation bar
+					<li><code class="code">.nav-fixed</code> for a <code class="code">position: fixed</code> navigation bar
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="nav nav-white">
+							<a class="nav-title float-left">Nav Bar</a>
+							<ul class="list list-float float-left">
+								<li class="active"><a href="#">Home</a>
+								<li><a href="#">Contact</a>
+							</ul>
+						</div>
+						
+						<br>
+						
+						<div class="nav nav-black">
+							<a class="nav-title float-right">Nav Bar</a>
+							<ul class="list list-float float-left">
+								<li class="active"><a href="#">Home</a>
+								<li><a href="#">Contact</a>
+							</ul>
+						</div>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;div class="nav nav-white"&gt;
+	&lt;a class="nav-title float-left"&gt;Nav Bar&lt;/a&gt;
+	&lt;ul class="list list-float float-left"&gt;
+		&lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="nav nav-black"&gt;
+	&lt;a class="nav-title float-right"&gt;Nav Bar&lt;/a&gt;
+	...
+&lt;/div&gt;
+</pre>
+				</p>
+				
+				<p>As seen above, the class <code class="code">.nav-title</code> is used to identify the page title. Ideally, it is used to identify the website or company name. With the use of the <code class="code">.float-left</code> and <code class="code">.float-right</code>, elements can be positioned accordingly.</p>
+				
+				<p>A <code class="code">.list</code> can be added to be used as a list of links on the navigation bar. The <code class="code">.active</code> class can be used to identify the current page that the user is on. A <code class="code">form</code> can be included in the navigation bar as well. Simply add the class <code class="code">.nav-form</code> and the <code class="code">form</code> will be positioned properly.</p>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="nav nav-white">
+							<a class="nav-title float-left">Nav Bar</a>
+							<form class="nav-form float-right">
+								<input class="input" type="text" placeholder="Search">
+								<button class="btn"><i class="icon-search"></i></button>
+							</form>
+						</div>
+					</div>
+				</p>
+				
+				<h2 id="table">Table</h2>
+				
+				
+				<h2 id="progress">Progress Bar</h2>
+				
+				
+				<h2 id="dropdown">Dropdown</h2>
+				
+				
+				<h2 id="modal">Modal Box</h2>
 				
 				<!--
+				
+				<code class="code">.</code>
+				
 				<ul>
 					<li><code class="code">.</code> for <code class="code"></code>
 					<li><code class="code">.</code> for <code class="code"></code>
@@ -197,10 +511,30 @@
 		
 		<script src="../js/yepnope.min.js"></script>
 		<script>
-			yepnope([
-				'../js/jquery.min.js',
-				'../js/pf-plugin.js'
-			]);
+			yepnope({
+				load: [
+					'../js/jquery.min.js',
+					'../js/pf-plugin.js'
+				],
+				complete: function () {
+					var select = $('#base-css-nav'),
+						selectParent = $(select).parent(),
+						nav = $('.nav').first();
+					
+					$(select).on('change', function (e) {
+						e.preventDefault();
+						
+						$(document).scrollTop($('#' + $(this).val()).offset().top);
+					});
+					
+					$(window).on('scroll', function (e) {
+						$(select).css(
+							'margin-top',
+							Math.max(0, $(document).scrollTop() - $(selectParent).offset().top + $(nav).height()) + 'px'
+						);
+					}).trigger('scroll');
+				}
+			});
 		</script>
 	</body>
 </html>
