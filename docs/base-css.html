@@ -750,6 +750,9 @@
 	...
 	
 	&lt;button class="btn modal-trigger" data-model-box-target="testModal"&gt;Trigger Modal&lt;/button&gt;
+	
+	...
+	
 &lt;/body&gt;
 </pre>
 				</p>
@@ -780,8 +783,7 @@
 					
 					$(select).on('change', function (e) {
 						e.preventDefault();
-						
-						$(document).scrollTop($('#' + $(this).val()).offset().top);
+						document.location.hash = '#' + $(this).val();
 					});
 					
 					$(window).on('scroll', function (e) {

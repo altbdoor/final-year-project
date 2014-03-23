@@ -12,10 +12,32 @@
 		<link rel="stylesheet" href="../css/pf-grid.css">
 		<link rel="stylesheet" href="docs-style.css">
 		
+		<style>
+			h2 {margin-top:0; padding-top:50px; border-bottom:3px solid #333}
+			ul > .gap {list-style:none; height:1em}
+		</style>
+		
 		<script src="../js/prefixfree.min.js"></script>
 	</head>
 	
 	<body class="text-16">
+		<div class="modal modal-black">
+			<div id="testModal" class="modal-box" data-modal-box-animation="slide">
+				<div class="modal-header">
+					<h2 style="padding:0; border:0">Modal Box</h2>
+					<button class="btn btn-red modal-dismiss">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+					This is the modal box
+				</div>
+				
+				<div class="modal-footer">
+					<button class="btn btn-red modal-dismiss">Dismiss</button>
+				</div>
+			</div>
+		</div>
+		
 		<div class="nav nav-black nav-fixed">
 			<div class="clear">
 				<a href="." class="nav-title float-left">Pixelly Framing</a>
@@ -42,7 +64,206 @@
 		</div>
 		
 		<div class="row">
+			<div class="col12">
+				To complement with some of the CSS rules available, a number of JavaScript plugins were made. In addition, a form verifier plugin which simplifies the process of verifying user input on the client side.
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col3">
+				<div style="padding-top:50px">
+					<select id="js-nav" class="input input-large input-block">
+						<option value="nav-trigger">Navigation Trigger
+						<option value="dropdown">Dropdown
+						<option value="modal">Modal
+						<option value="form-verify">Form Verify
+						<option value="global-override">Global Override
+					</select>
+				</div>
+			</div>
 			
+			<div class="col9">
+				<h2 id="nav-trigger">Navigation Trigger</h2>
+				
+				<p>Navigation trigger is recommended for use in navigation bars for smaller viewports. The animation in which how the navigation menu appears can be customized with the <code class="code">data-nav-menu-animation</code> attribute. The supported animation values are <code class="code">slide</code>, <code class="code">fade</code> and <code class="code">show</code>. </p>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="nav nav-black">
+							<div>
+								<a href="#" class="nav-trigger float-left" data-nav-menu-animation="slide">
+									<div></div>
+									<div></div>
+									<div></div>
+								</a>
+								
+								<a class="nav-title float-left">Nav Bar</a>
+							</div>
+							
+							<div class="nav-menu">
+								<ul class="list">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<br>
+					
+<pre class="code">&lt;div class="nav nav-black"&gt;
+	&lt;div&gt;
+		&lt;a href="#" class="nav-trigger float-left" data-nav-menu-animation="slide"&gt;
+			&lt;div&gt;&lt;/div&gt;
+			&lt;div&gt;&lt;/div&gt;
+			&lt;div&gt;&lt;/div&gt;
+		&lt;/a&gt;
+		
+		&lt;a class="nav-title float-left"&gt;Nav Bar&lt;/a&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="nav-menu"&gt;
+		&lt;ul class="list"&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				</p>
+				
+				<h2 id="dropdown">Dropdown</h2>
+				
+				<p>Dropdown consists of two parts. The container of the dropdown, indicated with the <code class="code">.dropdown</code> class and the dropdown menu which will appear, indicated with the <code class="code">.dropdown-menu</code> class.</p>
+				
+				<p>Similar to navigation menu, dropdown animations can be customized as well, with the <code class="code">data-dropdown-animation</code> attribute. In addition, the trigger for the navigation menu can be changed as well with the <code class="code">data-dropdown-trigger</code> attribute. Supported values are <code class="code">hover</code>, <code class="code">mouseover</code> (which is the same as <code class="code">hover</code>) and <code class="code">click</code>.</p>
+				
+				<p>In addition, a dropdown can be instantiated with the <code class="code">.dropdown()</code> method. The method accepts the string <code class="code">hide</code> or <code class="code">show</code>, to show or hide the dropdown menu.</p>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="dropdown" data-dropdown-animation="fade">
+							<button class="btn btn-red" data-dropdown-trigger="hover">Toggle Dropdown</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Link 001</a></li>
+								<li><a href="#">Link 002</a></li>
+								<li><a href="#">Link 003</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;div id="dropdownDemo" class="dropdown" data-dropdown-animation="fade"&gt;
+	&lt;button class="btn btn-red" data-dropdown-trigger="hover"&gt;Toggle Dropdown&lt;/button&gt;
+	&lt;ul class="dropdown-menu"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Link 001&lt;/a&gt;&lt;/li&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+	$('#dropdownDemo').dropdown();
+&lt;/script&gt;
+</pre>
+				</p>
+				
+				<h2 id="modal">Modal</h2>
+				
+				<p>Modals are more complex, with an overlay and the modal box. There can be many <code class="code">.modal-box</code> in a <code class="code">.modal</code>. The triggers of the modals, identified by <code class="code">.modal-trigger</code>, triggers the <code class="code">.modal-box</code> with the ID specified in the <code class="code">data-modal-box-target</code> attribute.</p>
+				
+				<p>Once again, the animation controls are specified with the <code class="code">data-modal-box-animation</code> attribute.</p>
+				
+				<p>A modal can be instantiated with the <code class="code">.modal()</code> method. The method accepts the string <code class="code">hide</code> or <code class="code">show</code>, to show or hide the modal.</p>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<button class="btn btn-black modal-trigger" data-modal-box-target="testModal">Trigger Modal</button>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;body&gt;
+	&lt;div class="modal modal-black"&gt;
+		&lt;div id="testModal" class="modal-box" data-modal-box-animation="slide"&gt;
+			&lt;div class="modal-header"&gt;
+					&lt;h2&gt;Modal Box&lt;/h2&gt;
+					&lt;button class="btn btn-red modal-dismiss"&gt;&amp;times;&lt;/button&gt;
+				&lt;/div&gt;
+				
+				&lt;div class="modal-body"&gt;
+					This is the modal box
+				&lt;/div&gt;
+				
+				&lt;div class="modal-footer"&gt;
+					&lt;button class="btn btn-red modal-dismiss"&gt;Dismiss&lt;/button&gt;
+				&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+	...
+	
+	&lt;button id="modalDemo" class="btn modal-trigger" data-model-box-target="testModal"&gt;Trigger Modal&lt;/button&gt;
+	
+	&lt;script&gt;
+		$('#modalDemo').modal();
+	&lt;/script&gt;
+	
+	...
+	
+&lt;/body&gt;
+</pre>
+				</p>
+				
+				<h2 id="form-verify">Form Verify</h2>
+				
+				<p>Forms are an integral part of websites. It is essential that forms are validated before they are sent to the servers. Pixelly Framing bundles with a powerful form verifier with many options.</p>
+				
+				<ul>
+					<li><code class="code">data-verify-regex</code> to check the input value with regular expressions
+					<li><code class="code">data-verify-dataset</code> to check the input value with a number of data
+					<li><code class="code">data-verify-required</code> to ensure that the input value is filled
+					<li><code class="code">data-verify-length</code> to ensure that the input length is in a range
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<form>
+							<table class="table table-border">
+								<tr>
+									<td><code class="code">data-verify-regex="/regexp?/"</code></td>
+									<td><input type="text" data-verify-regex="/regexp?/"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><code class="code">data-verify-dataset="apple,orange,strawberry"</code></td>
+									<td><input type="text" data-verify-dataset="apple,orange,strawberry"></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><code class="code">data-verify-required</code></td>
+									<td><input type="text" data-verify-required></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><code class="code">data-verify-length="5,30"</code></td>
+									<td><input type="text" data-verify-length="5,30"></td>
+									<td></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</p>
+				
+				<h2 id="global-override">Global Override</h2>
+			</div>
 		</div>
 		
 		<div class="row">
@@ -57,10 +278,29 @@
 		
 		<script src="../js/yepnope.min.js"></script>
 		<script>
-			yepnope([
-				'../js/jquery.min.js',
-				'../js/pf-plugin.js'
-			]);
+			yepnope({
+				load: [
+					'../js/jquery.min.js',
+					'../js/pf-plugin.js'
+				],
+				complete: function () {
+					var select = $('#js-nav'),
+						selectParent = $(select).parent(),
+						nav = $('.nav').first();
+					
+					$(select).on('change', function (e) {
+						e.preventDefault();
+						document.location.hash = '#' + $(this).val();
+					});
+					
+					$(window).on('scroll', function (e) {
+						$(select).css(
+							'margin-top',
+							Math.max(0, $(document).scrollTop() - $(selectParent).offset().top + $(nav).height()) + 'px'
+						);
+					}).trigger('scroll');
+				}
+			});
 		</script>
 	</body>
 </html>

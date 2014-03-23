@@ -82,11 +82,11 @@
 		if (typeof(operation) === 'undefined') {
 			return this.each(function () {
 				var dropdown = this,
-					trigger = $(dropdown).data('dropdown-trigger') || defaultSetup.dropdownTrigger,
-					animation = $(dropdown).data('dropdown-animation') || defaultSetup.dropdownAnimation,
 					menu = $(dropdown).children('.dropdown-menu').first(),
-					button = $(dropdown).children('button, a').first();
-				
+					button = $(dropdown).children('button, a').first(),
+					trigger = $(button).data('dropdown-trigger') || defaultSetup.dropdownTrigger,
+					animation = $(dropdown).data('dropdown-animation') || defaultSetup.dropdownAnimation;
+				console.log($(button));
 				if (trigger == 'hover' || trigger == 'mouseover') {
 					var hoverTimer;
 					
