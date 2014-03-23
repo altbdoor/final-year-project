@@ -23,6 +23,23 @@
 	</head>
 	
 	<body class="text-16">
+		<div class="modal modal-black">
+			<div id="testModal" class="modal-box">
+				<div class="modal-header">
+					<h2 style="padding:0; border:0">Modal Box</h2>
+					<button class="btn btn-red modal-dismiss">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+					This is the modal box
+				</div>
+				
+				<div class="modal-footer">
+					<button class="btn btn-red modal-dismiss">Dismiss</button>
+				</div>
+			</div>
+		</div>
+		
 		<div class="nav nav-black nav-fixed">
 			<div class="clear">
 				<a href="." class="nav-title float-left">Pixelly Framing</a>
@@ -69,6 +86,8 @@
 						<option value="input">Input
 						<option value="boxes">Boxes
 						<option value="nav">Navigation Bar
+						<option value="nav-basic">-- Basic Navigation Bar
+						<option value="nav-small-viewport">-- Navigation Bar for Small Viewports
 						<option value="table">Table
 						<option value="progress">Progress Bar
 						<option value="dropdown">Dropdown
@@ -405,14 +424,20 @@
 				
 				<h2 id="nav">Navigation Bar</h2>
 				
-				<p>Pixelly Framing comes with two navigation bars, which are colored black or white. As you can probably see, the navigation bar on top of the page is black. Navigation bars are identified with the <code class="code">.nav</code> class. Additional helper classes include:</p>
+				<p>Pixelly Framing comes with two navigation bars, which are colored black or white. As you can probably see, the navigation bar on top of the page is black. Navigation bars are identified with the <code class="code">.nav</code> class. Within the <code class="code">.nav</code> class, there are many other helper classes. <code class="code">.nav-title</code> emphasizes the website's name, along with <code class="code">.list</code>, which lists down the common links of the website.</p>
 				
-				<h3>Basic Navigation Bar</h3>
+				<p>For smaller viewports, the navigation bar provides a small trigger button with a dropdown menu, with the classes <code class="code">.nav-trigger</code> and <code class="code">.nav-menu</code> respectively. Dropdowns can also be used as well, which will be explained further in the <a href="#dropdown">Dropdown</a> section.</p>
+				
+				<h3 id="nav-basic">Basic Navigation Bar</h3>
 				
 				<ul>
+					<li><code class="code">.nav</code> to initiate navigation bar
 					<li><code class="code">.nav-black</code> for black navigation bar
 					<li><code class="code">.nav-white</code> for white navigation bar
 					<li><code class="code">.nav-fixed</code> for a <code class="code">position: fixed</code> navigation bar
+					<li class="gap">
+					<li><code class="code">.nav-title</code> for highlighting website's name
+					<li><code class="code">.list</code> for common links of website
 				</ul>
 				
 				<p>
@@ -455,47 +480,279 @@
 </pre>
 				</p>
 				
-				<p>As seen above, the class <code class="code">.nav-title</code> is used to identify the page title. Ideally, it is used to identify the website or company name. With the use of the <code class="code">.float-left</code> and <code class="code">.float-right</code>, elements can be positioned accordingly.</p>
+				<h3 id="nav-small-viewport">Navigation Bar for Small Viewports</h3>
 				
-				<p>A <code class="code">.list</code> can be added to be used as a list of links on the navigation bar. The <code class="code">.active</code> class can be used to identify the current page that the user is on. A <code class="code">form</code> can be included in the navigation bar as well. Simply add the class <code class="code">.nav-form</code> and the <code class="code">form</code> will be positioned properly.</p>
+				<ul>
+					<li><code class="code">.nav-trigger</code> for the menu trigger button
+					<li><code class="code">.nav-menu</code> for the menu dropdown
+				</ul>
+				
+				<p>
+					Example:
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="nav nav-black">
+							<div>
+								<a href="#" class="nav-trigger float-left">
+									<div></div>
+									<div></div>
+									<div></div>
+								</a>
+								
+								<a class="nav-title float-left">Nav Bar</a>
+							</div>
+							
+							<div class="nav-menu">
+								<ul class="list">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;div class="nav nav-black"&gt;
+	&lt;div&gt;
+		&lt;a href="#" class="nav-trigger float-left"&gt;
+			&lt;div&gt;&lt;/div&gt;
+			&lt;div&gt;&lt;/div&gt;
+			&lt;div&gt;&lt;/div&gt;
+		&lt;/a&gt;
+		
+		&lt;a class="nav-title float-left"&gt;Nav Bar&lt;/a&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="nav-menu"&gt;
+		&lt;ul class="list"&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				</p>
+				
+				<h2 id="table">Table</h2>
+				
+				<p>Pixelly Speaking provides a number of basic table styling, for example, striped rows, bordered tables and full-width tables.</p>
+				
+				<ul>
+					<li><code class="code">.table</code> to initiate tables
+					<li><code class="code">.table-fill</code> for <code class="code">width: 100%</code> tables
+					<li><code class="code">.table-comfy</code> for columns with larger padding
+					<li class="gap">
+					<li><code class="code">.table-border</code> for tables fully bordered
+					<li><code class="code">.table-border-row</code> for tables with the rows bordered only
+					<li><code class="code">.table-stripe</code> for striped tables
+				</ul>
 				
 				<p>
 					Example:
 					
 					<div class="box box-blue text-14" style="padding:10px">
-						<div class="nav nav-white">
-							<a class="nav-title float-left">Nav Bar</a>
-							<form class="nav-form float-right">
-								<input class="input" type="text" placeholder="Search">
-								<button class="btn"><i class="icon-search"></i></button>
-							</form>
-						</div>
+						<table class="table table-fill">
+							<tr>
+								<td>Default table</td>
+								<td>With 100% width</td>
+							</tr>
+						</table>
+						<br>
+						<table class="table table-fill table-border">
+							<tr>
+								<td>Tables with borders</td>
+								<td>On all cells</td>
+							</tr>
+						</table>
+						<br>
+						<table class="table table-fill table-border-row">
+							<tr>
+								<td>Tables with borders</td>
+								<td>On all rows only</td>
+							</tr>
+							<tr>
+								<td>Tables with borders</td>
+								<td>On all rows only</td>
+							</tr>
+						</table>
+						<br>
+						<table class="table table-fill table-stripe">
+							<tr>
+								<td>Tables with striped background</td>
+								<td>This row is <code class="code">background-color: #fff</code></td>
+							</tr>
+							<tr>
+								<td>Tables with striped background</td>
+								<td>This row is <code class="code">background-color: #f8f8f8</code></td>
+							</tr>
+						</table>
 					</div>
+					
+					<br>
+
+<pre class="code">&lt;table class="table table-fill"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Default table&lt;/td&gt;
+		&lt;td&gt;With 100% width&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table class="table table-fill table-border"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Tables with borders&lt;/td&gt;
+		&lt;td&gt;On all cells&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table class="table table-fill table-border-row"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Tables with borders&lt;/td&gt;
+		&lt;td&gt;On all rows only&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Tables with borders&lt;/td&gt;
+		&lt;td&gt;On all rows only&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table class="table table-fill table-stripe"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Tables with striped background&lt;/td&gt;
+		&lt;td&gt;This row is &lt;code class="code"&gt;background-color: #fff&lt;/code&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Tables with striped background&lt;/td&gt;
+		&lt;td&gt;This row is &lt;code class="code"&gt;background-color: #f8f8f8&lt;/code&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</pre>					
 				</p>
-				
-				<h2 id="table">Table</h2>
-				
 				
 				<h2 id="progress">Progress Bar</h2>
 				
+				<p>Simple progress bars are also provided, utilizing the <code class="code">.box</code> helper classes to give color to the usually mundane progress bars.</p>
+				
+				<ul>
+					<li><code class="code">.progress</code> to initiate a progress bar
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="progress">
+							<div class="box box-red" style="width:60%"></div>
+						</div>
+						<br>
+						<div class="progress">
+							<div class="box box-green" style="width:30%"></div>
+						</div>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;div class="progress"&gt;
+	&lt;div class="box box-red" style="width:60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress"&gt;
+	&lt;div class="box box-green" style="width:30%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				</p>
 				
 				<h2 id="dropdown">Dropdown</h2>
 				
+				<p>Dropdowns are an essential part of websites, offering navigation and choice for users while conserving space. Pixelly Framing rolls with its own dropdown, which does not support nested dropdowns.</p>
+				
+				<ul>
+					<li><code class="code">.dropdown</code> to initiate dropdown
+					<li class="gap">
+					<li><code class="code">.dropdown-menu</code> to initiate the toggled dropdown menu
+					<li><code class="code">.dropdown-menu-right</code> to align the dropdown menu to the right
+					<li class="gap">
+					<li><code class="code">.dropdown-spacer</code> to create space between dropdown menu entries
+				</ul>
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<div class="dropdown">
+							<button class="btn btn-red">Toggle Dropdown</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Link 001</a></li>
+								<li><a href="#">Link 002</a></li>
+								<li><a href="#">Link 003</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;div class="dropdown"&gt;
+	&lt;button class="btn btn-red"&gt;Toggle Dropdown&lt;/button&gt;
+	&lt;ul class="dropdown-menu"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Link 001&lt;/a&gt;&lt;/li&gt;
+		...
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+				</p>
 				
 				<h2 id="modal">Modal Box</h2>
 				
-				<!--
-				
-				<code class="code">.</code>
+				<p>Modals capture the user's attention to something which needs to be highlighted. Similar to many other CSS rules, modals in Pixelly Speaking is customizable.</p>
 				
 				<ul>
-					<li><code class="code">.</code> for <code class="code"></code>
-					<li><code class="code">.</code> for <code class="code"></code>
-					<li><code class="code">.</code> for <code class="code"></code>
-					<li><code class="code">.</code> for <code class="code"></code>
-					<li><code class="code">.</code> for <code class="code"></code>
+					<li><code class="code">.modal</code> for the background of the modal
+					<li><code class="code">.modal-black</code> for a black modal
+					<li><code class="code">.modal-white</code> for a white modal
+					<li class="gap">
+					<li><code class="code">.modal-box</code> to initiate the modal box
+					<li class="gap">
+					<li><code class="code">.modal-header</code> for the modal box's header
+					<li><code class="code">.modal-body</code> for the modal box's body
+					<li><code class="code">.modal-footer</code> for the modal box's footer
+					<li class="gap">
+					<li><code class="code">.modal-trigger</code> to trigger the modal
+					<li><code class="code">.modal-dismiss</code> to dismiss the modal
 				</ul>
-				-->
+				
+				<p>
+					Example:
+					
+					<div class="box box-blue text-14" style="padding:10px">
+						<button class="btn btn-black modal-trigger" data-modal-box-target="testModal" onclick="$('.modal').first().removeClass('modal-white').addClass('modal-black')">Trigger Black Modal</button>
+						<button class="btn modal-trigger" data-modal-box-target="testModal" onclick="$('.modal').first().removeClass('modal-black').addClass('modal-white')">Trigger White Modal</button>
+					</div>
+					
+					<br>
+					
+<pre class="code">&lt;body&gt;
+	&lt;div class="modal modal-black"&gt;
+		&lt;div id="testModal" class="modal-box"&gt;
+			&lt;div class="modal-header"&gt;
+					&lt;h2&gt;Modal Box&lt;/h2&gt;
+					&lt;button class="btn btn-red modal-dismiss"&gt;&amp;times;&lt;/button&gt;
+				&lt;/div&gt;
+				
+				&lt;div class="modal-body"&gt;
+					This is the modal box
+				&lt;/div&gt;
+				
+				&lt;div class="modal-footer"&gt;
+					&lt;button class="btn btn-red modal-dismiss"&gt;Dismiss&lt;/button&gt;
+				&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+	...
+	
+	&lt;button class="btn modal-trigger" data-model-box-target="testModal"&gt;Trigger Modal&lt;/button&gt;
+&lt;/body&gt;
+</pre>
+				</p>
 			</div>
 		</div>
 		

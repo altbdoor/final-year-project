@@ -192,7 +192,6 @@
 	$.fn.formVerify = function (callback) {
 		$(this).on('submit', function (e) {
 			var input = $(this).find('input[type=text], input[type=password], textarea, select'),
-				regex,
 				failed = [];
 			
 			$(input).each(function () {
@@ -203,7 +202,7 @@
 					val = $(this).val();
 				
 				if (typeof($(this).data('verify-regex')) !== 'undefined') {
-					regex = new RegExp($(this).data('verify-regex'));
+					var regex = new RegExp($(this).data('verify-regex').replace(/&quot;/g, '"'));
 					
 					if (!regex.test(val)) {
 						temp.fault.push('regex');
