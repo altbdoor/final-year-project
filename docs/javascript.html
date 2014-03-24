@@ -235,34 +235,75 @@
 					Example:
 					
 					<div class="box box-blue text-14" style="padding:10px">
-						<form>
+						<form id="testForm">
 							<table class="table table-border">
 								<tr>
-									<td><code class="code">data-verify-regex="/regexp?/"</code></td>
-									<td><input type="text" data-verify-regex="/regexp?/"></td>
-									<td></td>
+									<td><code class="code">data-verify-regex="/^#?([a-f0-9]{6}|[a-f0-9]{3})$/"</code></td>
+									<td><input class="input" type="text" data-verify-regex="/^#?([a-f0-9]{6}|[a-f0-9]{3})$/"></td>
 								</tr>
 								<tr>
 									<td><code class="code">data-verify-dataset="apple,orange,strawberry"</code></td>
-									<td><input type="text" data-verify-dataset="apple,orange,strawberry"></td>
-									<td></td>
+									<td><input class="input" type="text" data-verify-dataset="apple,orange,strawberry"></td>
 								</tr>
 								<tr>
 									<td><code class="code">data-verify-required</code></td>
-									<td><input type="text" data-verify-required></td>
-									<td></td>
+									<td><input class="input" type="text" data-verify-required></td>
 								</tr>
 								<tr>
 									<td><code class="code">data-verify-length="5,30"</code></td>
-									<td><input type="text" data-verify-length="5,30"></td>
-									<td></td>
+									<td><input class="input" type="text" data-verify-length="5,30"></td>
+								</tr>
+								<tr>
+									<td colspan="2" class="text-center"><button class="btn">Submit</button></td>
 								</tr>
 							</table>
 						</form>
 					</div>
+					
+					<br>
+					
+<pre class="code">&lt;form id="testForm"&gt;
+	&lt;input type="text" data-verify-regex=""&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+	$('#testForm').formVerify(function (event, success, failedList) {
+		if (success) {
+			...
+		}
+		else {
+			event.preventDefault();
+			
+			...
+		}
+	});
+&lt;/script&gt;
+</pre>
 				</p>
 				
 				<h2 id="global-override">Global Override</h2>
+				
+				<p>All of the animated elements (modals and dropdowns) have been hardcoded to show or hide without animation. If you wish to change this nature, you can do so by globally overriding the default settings with a <code class="code">pxSetup</code> JavaScript object.</p>
+				
+				<ul>
+					<li><code class="code">navMenuAnimation : 'show'</code></li>
+					<li><code class="code">dropdownTrigger : 'click'</code></li>
+					<li><code class="code">dropdownAnimation : 'show'</code></li>
+					<li><code class="code">modalBoxAnimation : 'fade'</code></li>
+				</ul>
+				
+				<p>
+					Example:
+					
+<pre class="code">&lt;script&gt;
+	var pxSetup = {
+		navMenuAnimation : 'fade',
+		modalBoxAnimation : 'slide'
+	};
+&lt;/script&gt;
+&lt;script src="pf-plugin.js"&gt;&lt;/script&gt;
+</pre>
+				</p>
 			</div>
 		</div>
 		
@@ -299,6 +340,23 @@
 							Math.max(0, $(document).scrollTop() - $(selectParent).offset().top + $(nav).height()) + 'px'
 						);
 					}).trigger('scroll');
+					
+					$('#testForm').formVerify(function (e, pass, failedList) {
+						e.preventDefault();
+						
+						if (pass) {
+							alert('All input fields passed the verification!');
+						}
+						else {
+							var str = 'The following inputs have failed the verification:';
+							
+							for (var i=0; i<failedList.length; i++) {
+								str += '\n\t- ' + failedList[i].fault[0];
+							}
+							
+							alert(str);
+						}
+					});
 				}
 			});
 		</script>

@@ -86,7 +86,7 @@
 					button = $(dropdown).children('button, a').first(),
 					trigger = $(button).data('dropdown-trigger') || defaultSetup.dropdownTrigger,
 					animation = $(dropdown).data('dropdown-animation') || defaultSetup.dropdownAnimation;
-				console.log($(button));
+				
 				if (trigger == 'hover' || trigger == 'mouseover') {
 					var hoverTimer;
 					
